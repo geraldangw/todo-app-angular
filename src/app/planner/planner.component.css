@@ -1,0 +1,27 @@
+form {
+    width: 80vw;
+    background-color: #333333;
+    padding: 2%;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.jumbotron {
+    width: 80vw;
+    margin: 2% auto;
+    border-radius: 5px;
+}
+
+#taskheader {
+    color: #333333;
+}

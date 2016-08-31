@@ -1,0 +1,21 @@
+    <form>
+      <h2>ADD A TASK</h2>
+
+      <div class="form-group">
+        <input class="form-control" placeholder="Enter your task..." name="task" #newtask>
+      </div>
+
+      <button (click)="addTask(newtask)"
+              class="btn btn-default">
+        SUBMIT
+      </button>
+    </form>
+
+    <div class="jumbotron">
+      <h2 id="taskheader"> MY TASKS </h2>
+      <ga-task
+        *ngFor="let task of sortedTasks()"
+        [task]="task">
+      </ga-task>
+      </div>
+

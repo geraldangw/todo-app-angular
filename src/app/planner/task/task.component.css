@@ -1,0 +1,17 @@
+.panel {
+    margin: 1% 3%;
+    color: white;
+    background-color: #333333;
+    padding: 1%;
+}
+
+a {
+    float: right;
+    font-weight: bolder !important;
+    color: orange !important;
+}
+
+span {
+    font-weight: bolder;
+    color: yellow;
+}

@@ -1,0 +1,11 @@
+#navbar {
+    background-color: #333333 !important;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    color: red !important;
+}

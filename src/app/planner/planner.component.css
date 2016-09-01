@@ -34,7 +34,6 @@ h3 {
 #dailygoal {
     background-color: #333333;
     opacity: 0.9;
-    height: 25vh;
 }
 
 #dailyheader {
@@ -57,11 +56,8 @@ h3 {
 
 #daily {
     display: block;
-    margin: 3% auto;
-    font-size: 1em;
+    font-size: 3em;
+    text-align: center;
     color: orange;
-    border-bottom: 0.5px solid white;
-    height: 5vh;
-    width: 40vh;
-    padding: 3%;
+    margin: 0 auto;
 }

@@ -33,7 +33,9 @@
         *ngFor="let task of pendingTasks()"
         [task]="task">
       </ga-task>
-
+      </div>
+    
+    <div class="jumbotron">
       <h3 class="taskheader"> DONE </h3>
       <ga-task
         *ngFor="let task of doneTasks()"

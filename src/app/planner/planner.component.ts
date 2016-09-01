@@ -42,7 +42,7 @@ export class PlannerComponent{
     }
 
     checkPending(task) : any {
-    return task.status === false; 
+    return task.status === false && task.priority === false; 
     }
 
     doneTasks(): Task[] {
@@ -58,7 +58,7 @@ export class PlannerComponent{
     }
 
     checkPriority(task) : any {
-    return task.priority === true; 
+    return task.priority === true && task.status === false; 
     }
 
     onChange(value: string){

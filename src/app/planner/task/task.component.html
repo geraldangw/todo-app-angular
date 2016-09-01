@@ -3,16 +3,16 @@
     <div class="panel panel-default">
     <div> <span id="task"> {{ task.task }} </span>
       
-      <span id="assign"> l {{ task.assign }} </span>
+      <span id="assign"> {{ task.assign }} </span>
      
-      <span> {{task.status === false ? "X" : "O"}} </span>
-
+      <span> {{task.status === false ? "" : ": )"}} </span>
+    
     <a href (click)="done()">
-              {{ task.status === true ? "":"DONE?"}}
+              {{ task.status === true ? "":"CLEAR"}}
             </a>
 
     <a id="impt" href (click)="prioritize()">
-              P
+      {{ task.priority === true || task.status === true ? "":"PIN"}}
             </a>
 
     </div>

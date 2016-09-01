@@ -14,5 +14,4 @@ export class DailygoalComponent {
   onChange(value: string) {
     this.dailyGoalsChanged.emit(value);
   }
-
 }

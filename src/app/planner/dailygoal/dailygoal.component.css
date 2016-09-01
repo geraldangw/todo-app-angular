@@ -1,23 +1,23 @@
 .panel {
     width: 80vw;
-    height: 35vh;
+    height: 30vh;
     margin: 0 auto;
     background-color: #333333;
+    opacity: 0.9;
     border: none;
-    margin-bottom: 4%;
 }
 
 label {
     display: block;
     text-align: center;
-    font-size: 15px;
+    font-size: 1.5em;
     padding-top: 4%;
     color: white;
 }
 
 input {
     display: block;
-    height: 15vh;
+    height: 10vh;
     width: 70vw;
     margin: 0 auto;
     text-align: center;
@@ -27,5 +27,7 @@ input {
 button {
     display: block;
     margin: 0 auto;
-    margin-top: 3%;
+    margin-top: 2%;
+    background-color: #333333;
+    color: white;
 }

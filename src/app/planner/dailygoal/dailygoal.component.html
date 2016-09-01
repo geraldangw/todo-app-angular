@@ -1,6 +1,9 @@
     <div class="panel panel-default">
     
-    <label>Enter your daily goal here</label>
-    <input type="text" (keyup)="onChange(grandChildInput.value)" #grandChildInput>
-
+    <label>What's your Goal today?</label>
+    <input type="text" placeholder="3 words of less please..."  #dailyInput>
+      <button (click)="onChange(dailyInput.value)"
+              class="btn btn-default">
+        SUBMIT
+      </button>
     </div>

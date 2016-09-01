@@ -32,7 +32,7 @@ h3 {
 }
 
 #dailygoal {
-    background-color: #333333;
+    background-color: #2B3D41;
     opacity: 0.9;
 }
 
@@ -47,11 +47,27 @@ h3 {
     opacity: 0.9;
     height: 40vh;
 }
+label {
+    display: inline;
+    color: white !important;
+}
+
+#checkbox {
+    width: 2vw;
+    height: 2.5vh;
+    display: inline-block;
+}
+
+#pin {
+    display: inline-block;
+    color: red !important;
+}
+
 
 
 #priorityheader {
     color: white;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 #daily {

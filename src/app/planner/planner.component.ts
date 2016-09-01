@@ -31,10 +31,11 @@ export class PlannerComponent{
     ];
   }
 
-    addTask(task: HTMLInputElement, assign: HTMLInputElement): void {
-    this.tasks.push(new Task(task.value, assign.value, false, false));
+    addTask(task: HTMLInputElement, assign: HTMLInputElement, priority: HTMLInputElement): void {
+    this.tasks.push(new Task(task.value, assign.value, false, priority.checked));
     task.value = '';
     assign.value = '';
+    priority.checked = false;
   }
 
     pendingTasks(): Task[] {

@@ -15,3 +15,4 @@ export class DailygoalComponent {
     this.dailyGoalsChanged.emit(value);
   }
 }
+

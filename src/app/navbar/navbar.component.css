@@ -1,9 +1,14 @@
 #navbar {
-    background-color: #333333 !important;
+    background: none;
+    border: none;
 }
 
 a {
     color: white !important;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.8em;
+    font-family: "Patua One" !important;
 }
 
 a:hover {

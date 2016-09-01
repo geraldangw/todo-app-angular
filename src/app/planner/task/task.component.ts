@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: 'task.component.html',
   styleUrls: ['task.component.css'],
   inputs: ['task'],
+  outputs: ['dailyGoalsChanged']
 })
 export class TaskComponent {
   task: Task;
@@ -15,6 +16,12 @@ export class TaskComponent {
     return false;
   }
 
+  dailyGoalsChanged = new EventEmitter();
+
+  onChange(value: string) {
+    this.dailyGoalsChanged.emit(value);
+  }
+
 
 
 }
@@ -22,9 +29,11 @@ export class TaskComponent {
 export class Task {
   task: string;
   status: boolean;
+  assign: string;
 
-    constructor(task: string, status?: boolean) {
+    constructor(task: string, assign: string, status?: boolean) {
     this.task = task;
+    this.assign = assign;
     this.status = status || false;
   }
 

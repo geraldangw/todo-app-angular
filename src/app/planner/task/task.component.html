@@ -1,8 +1,11 @@
     
+   
     <div class="panel panel-default">
-    <div> {{ task.task }} 
+    <div> <span id="task"> {{ task.task }} </span>
       
-      <span> {{task.status === false ? "PENDING" : "DONE"}} </span>
+      <span id="assign"> l {{ task.assign }} </span>
+     
+      <span> {{task.status === false ? "X" : "O"}} </span>
 
     <a href (click)="done()">
               {{ task.status === true ? "":"DONE?"}}

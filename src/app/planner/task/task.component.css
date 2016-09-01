@@ -8,10 +8,27 @@
 a {
     float: right;
     font-weight: bolder !important;
-    color: orange !important;
+    color: grey !important;
+    font-size: 12px;
+}
+
+a:hover {
+    color: green !important;
+    text-decoration: none;
 }
 
 span {
     font-weight: bolder;
-    color: yellow;
+    color: white;
+    margin-left: 1%;
+}
+
+#assign {
+    color: orange;
+    margin-left: 2%;
+    border: none;
+}
+
+#task {
+    font-weight: bolder;
 }

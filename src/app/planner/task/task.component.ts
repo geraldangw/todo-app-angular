@@ -11,8 +11,13 @@ import { Component, EventEmitter } from '@angular/core';
 export class TaskComponent {
   task: Task;
 
-    done(): boolean {
+  done(): boolean {
     this.task.done();
+    return false;
+  }
+
+  prioritize(): boolean {
+    this.task.prioritize();
     return false;
   }
 
@@ -30,15 +35,21 @@ export class Task {
   task: string;
   status: boolean;
   assign: string;
+  priority: boolean;
 
-    constructor(task: string, assign: string, status?: boolean) {
+    constructor(task: string, assign: string, status?: boolean, priority?:boolean) {
     this.task = task;
     this.assign = assign;
     this.status = status || false;
+    this.priority = priority || false;
   }
 
     done(): void {
     this.status = true;
+  }
+
+    prioritize(): void {
+    this.priority = true;
   }
 }
 

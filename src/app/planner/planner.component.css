@@ -20,10 +20,11 @@ h3 {
     width: 80vw;
     margin: 2% auto;
     border-radius: 5px;
+    background-color:#333333 ;
 }
 
 .taskheader {
-    color: #333333;
+    color: white;
 }
 
 #dailygoal {
@@ -42,6 +43,7 @@ h3 {
 #prioritytasks {
     background-color: #333333;
     height: 40vh;
+    margin-top: -2%;
 }
 
 #priorityheader {

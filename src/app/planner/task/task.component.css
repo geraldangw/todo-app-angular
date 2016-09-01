@@ -32,3 +32,8 @@ span {
 #task {
     font-weight: bolder;
 }
+
+#impt {
+    color: red !important;
+    margin-right: 5%;
+}

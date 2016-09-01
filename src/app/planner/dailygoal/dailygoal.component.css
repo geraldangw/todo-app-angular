@@ -1,10 +1,10 @@
 .panel {
     width: 80vw;
-    height: 25vh;
+    height: 35vh;
     margin: 0 auto;
     background-color: #333333;
     border: none;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
 }
 
 label {
@@ -17,10 +17,11 @@ label {
 
 input {
     display: block;
-    height: 10vh;
+    height: 15vh;
     width: 70vw;
     margin: 0 auto;
     text-align: center;
+    border-radius: 5px;
 }
 
 button {

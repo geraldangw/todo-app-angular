@@ -12,7 +12,7 @@
             </a>
 
     <a id="impt" href (click)="prioritize()">
-      {{ task.priority === false || task.false === true ? "PIN":""}}
+      {{ task.priority === false && task.status === false ? "PIN":""}}
             </a>
 
     </div>

@@ -18,7 +18,7 @@ export class PlannerComponent{
   constructor() {
     this.tasks = [
       new Task('Do a To Do App', "Gerald", false, false),
-      new Task('Sleep', "Gerald", false, false),
+      new Task('Sleep', "Gerald", false, true),
       new Task('Eat', "John", false, false),
       new Task('Talk', "Tom", false, false),
       new Task('Rinse', "Ming", false, false),
@@ -27,7 +27,7 @@ export class PlannerComponent{
       new Task('Repeat', "Gerald", false, false),
       new Task('Apply for Visa', "Gerald", true, false),
       new Task('Wake up early', "Gerald", true, false),
-      new Task('Drink Beer', "Jack", false, false),
+      new Task('Drink Beer', "Jack", false, true),
     ];
   }
 

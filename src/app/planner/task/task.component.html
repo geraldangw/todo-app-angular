@@ -5,14 +5,14 @@
       
       <span id="assign"> {{ task.assign }} </span>
      
-      <span> {{task.status === false ? "" : ": )"}} </span>
+     <span *ngIf="task.status === true"> : ) </span>
     
     <a href (click)="done()">
-              {{ task.status === true ? "":"CLEAR"}}
+              {{ task.status === false ? "CLEAR" :""}}
             </a>
 
     <a id="impt" href (click)="prioritize()">
-      {{ task.priority === true || task.status === true ? "":"PIN"}}
+      {{ task.priority === false || task.false === true ? "PIN":""}}
             </a>
 
     </div>

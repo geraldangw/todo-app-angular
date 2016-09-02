@@ -17,10 +17,7 @@
   },
 
   "files": [
-    "main.ts"
-  ],
-
-  "exclude": [
-    "typings"
+    "main.ts",
+    "typings.d.ts"
   ]
 }

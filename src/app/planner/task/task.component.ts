@@ -21,6 +21,11 @@ export class TaskComponent {
     return false;
   }
 
+    delete(): boolean {
+    this.task.delete();
+    return false;
+  }
+
   dailyGoalsChanged = new EventEmitter();
 
   onChange(value: string) {
@@ -36,12 +41,14 @@ export class Task {
   status: boolean;
   assign: string;
   priority: boolean;
+  deleted: boolean;
 
-    constructor(task: string, assign: string, status?: boolean, priority?:boolean) {
+    constructor(task: string, assign: string, status?: boolean, priority?:boolean, deleted?:boolean) {
     this.task = task;
     this.assign = assign;
     this.status = status || false;
     this.priority = priority || false;
+    this.deleted = deleted || false;
   }
 
     done(): void {
@@ -51,6 +58,11 @@ export class Task {
     prioritize(): void {
     this.priority = true;
   }
+
+  delete(): void {
+    this.deleted = true;
+  }
+  
 }
 
 

@@ -7,13 +7,20 @@
      
      <span *ngIf="task.status === true"> : ) </span>
     
-    <a href (click)="done()">
-              {{ task.status === false ? "CLEAR" :""}}
+
+
+     <a id="deleted" href (click)="delete()">
+              ooo
+           </a>
+
+    <a id="done" href (click)="done()">
+              {{ task.status === false ? "ooo" :""}}
             </a>
 
     <a id="impt" href (click)="prioritize()">
-      {{ task.priority === false && task.status === false ? "PIN":""}}
+      {{ task.priority === false && task.status === false ? "ooo":""}}
             </a>
+
 
     </div>
 

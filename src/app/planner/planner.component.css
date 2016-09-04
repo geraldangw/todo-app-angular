@@ -40,7 +40,7 @@ h3 {
 
 #dailyheader {
     color: white;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bolder;
 }
 
@@ -61,11 +61,11 @@ label {
 #pin {
     display: inline-block;
     color: #A9BCD0 !important;
+    font-weight: normal;
 }
 
 #priorityheader {
     color: white;
-    font-size: 2em;
 }
 
 #daily {

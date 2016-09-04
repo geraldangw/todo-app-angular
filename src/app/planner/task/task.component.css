@@ -6,9 +6,8 @@
 }
 
 a {
-    float: right;
-    font-weight: bolder !important;
     color: #98D9C2 !important;
+    border-radius:80px;
     font-size: 12px;
 }
 
@@ -17,7 +16,6 @@ a:hover {
 }
 
 span {
-    font-weight: bolder;
     color: white;
     margin-left: 1%;
 }
@@ -28,11 +26,28 @@ span {
     border: none;
 }
 
-#task {
-    font-weight: bolder;
-}
 
 #impt {
+    float: right;
     color: #A9BCD0!important;
     margin-right: 2%;
+    background-color:#A9BCD0;
+    opacity: 0.7;
+}
+
+#deleted {
+    float: right;
+    margin-right: 2%;
+    color: #C08497 !important;
+    background-color:#C08497;
+    border-radius: 80px;
+    opacity: 0.7;
+}
+
+#done {
+    float: right;
+    margin-right: 2%;
+    background-color:#98D9C2;
+    border-radius: 80px;
+    opacity: 0.7;
 }

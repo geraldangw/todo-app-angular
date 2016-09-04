@@ -1,16 +1,38 @@
-#navbar {
-    background: none;
-    border: none;
-}
+
 
 a {
     color: white !important;
     text-align: center;
     margin: 0 auto;
     font-size: 1.8em;
-    font-family: "Patua One" !important;
 }
 
 a:hover {
     color: red !important;
 }
+#button {
+    border: 1 px solid white !important;
+}
+
+.navbar {
+    background: none;
+    border: none;
+}
+li {
+    border: none;
+    border-radius: 5px;
+    background: rgba(20,20,20,0.1);
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 1%;
+    font-size: 1em;
+}
+.links {
+    color: orange !important;
+}
+  
+.navbar-collapse {
+    border: none !important;
+}
+
+

@@ -2,8 +2,7 @@
     width: 80vw;
     height: 30vh;
     margin: 0 auto;
-    background-color: #2B3D41;
-    opacity: 0.9;
+    background-color: rgba(20,20,20,0.1);
     border: none;
 }
 
@@ -28,6 +27,11 @@ button {
     display: block;
     margin: 0 auto;
     margin-top: 2%;
-    background-color: #2B3D41;
     color: white;
+    background: none;
+}
+
+button:hover {
+    background: none;
+    color: orange;
 }

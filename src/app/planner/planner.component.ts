@@ -28,6 +28,14 @@ export class PlannerComponent{
       new Task('Apply for Visa', "Gerald", true, false),
       new Task('Wake up early', "Gerald", true, false),
       new Task('Drink Beer', "Jack", false, true),
+      new Task('Find Places', "Tom", false, false),
+      new Task('Buy Groceries', "Ming", false, false),
+      new Task('Find a house', "Tyler", false, true),
+      new Task('Buy a turntable', "Gerald", true, true),
+      new Task('Win at the horses', "Gerald", false, false),
+      new Task('Bring out the thrash', "Gerald", true, false),
+      new Task('Sleep more', "Gerald", true, false),
+      new Task('Drink more', "Jack", false, true)
     ];
   }
 

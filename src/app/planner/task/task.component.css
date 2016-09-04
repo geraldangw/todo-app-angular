@@ -8,12 +8,11 @@
 a {
     float: right;
     font-weight: bolder !important;
-    color: green !important;
+    color: #98D9C2 !important;
     font-size: 12px;
 }
 
 a:hover {
-    color: green !important;
     text-decoration: none;
 }
 
@@ -34,6 +33,6 @@ span {
 }
 
 #impt {
-    color: red !important;
+    color: #A9BCD0!important;
     margin-right: 2%;
 }

@@ -1,6 +1,6 @@
 form {
     width: 80vw;
-    background-color: rgba(20,20,20,0.1);
+    background-color: rgba(20,20,20,0.05);
     padding: 4%;
     border-radius: 5px;
     margin: 0 auto;
@@ -21,13 +21,14 @@ button:hover {
 h3 {
     text-align: center;
     color: white;
+    font-size: 2em;
 }
 
 .jumbotron {
     width: 80vw;
     margin: 2% auto;
     border-radius: 5px;
-    background-color: rgba(20,20,20,0.1);
+    background-color: rgba(20,20,20,0.05);
 }
 
 .taskheader {
@@ -35,17 +36,17 @@ h3 {
 }
 
 #dailygoal {
-    background-color: rgba(20,20,20,0.1);
+    background-color: rgba(20,20,20,0.0);
 }
 
 #dailyheader {
     color: white;
-    font-size: 1.3em;
+    font-size: 1.8em;
     font-weight: bolder;
 }
 
 #prioritytasks {
-    background-color: rgba(20,20,20,0.1);
+    background-color: rgba(20,20,20,0.05);
 }
 label {
     display: inline;
@@ -59,9 +60,15 @@ label {
 }
 
 #pin {
-    display: inline-block;
-    color: #A9BCD0 !important;
-    font-weight: normal;
+    color: white!important;
+    margin-right: 2%;
+    background-color:#2274A5;
+    width: 7vw;
+    width: 4vh;
+    text-align: center;
+    opacity: 0.9;
+    padding: 1.5%;
+    border-radius: 80px;
 }
 
 #priorityheader {

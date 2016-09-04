@@ -1,4 +1,4 @@
-    <div class="jumbotron" id="dailygoal"> <h3 id="daily">{{dailyGoalsValue}} </h3></div>
+    <div class="jumbotron" id="dailygoal">  <h3 id="daily"> {{dailyGoalsValue? dailyGoalsValue: "HELLO!"}} </h3></div>
     <ga-dailygoal (dailyGoalsChanged)="onChange($event)"> </ga-dailygoal>
     
     <div class="jumbotron" id="prioritytasks"> 
@@ -22,7 +22,7 @@
 
        
         <input id="checkbox" class="form-control" type="checkbox" name="priority" #newpriority>  
-        <label id="pin">PIN? </label>
+        <label id="pin">pin </label>
 
 
       <button type= "button" (click)="addTask(newtask, newassign, newpriority)"

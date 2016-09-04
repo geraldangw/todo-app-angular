@@ -3,10 +3,11 @@
     color: white;
     background: none;
     padding: 1%;
+    height: 4vh;
 }
 
 a {
-    color: #98D9C2 !important;
+    color: white !important;
     border-radius:80px;
     font-size: 12px;
 }
@@ -29,25 +30,31 @@ span {
 
 #impt {
     float: right;
-    color: #A9BCD0!important;
+    color: white!important;
     margin-right: 2%;
-    background-color:#A9BCD0;
-    opacity: 0.7;
+    background-color:#2274A5;
+    width: 7vw;
+    width: 4vh;
+    text-align: center;
 }
 
 #deleted {
     float: right;
     margin-right: 2%;
-    color: #C08497 !important;
-    background-color:#C08497;
+    color: white !important;
+    background-color:#ED4D6E;
     border-radius: 80px;
-    opacity: 0.7;
+    width: 7vw;
+    width: 4vh;
+    text-align: center;
 }
 
 #done {
     float: right;
     margin-right: 2%;
-    background-color:#98D9C2;
+    background-color:#648767;
     border-radius: 80px;
-    opacity: 0.7;
+     width: 7vw;
+    width: 4vh;
+    text-align: center;
 }

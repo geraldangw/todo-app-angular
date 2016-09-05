@@ -4,3 +4,13 @@ p {
     font-size: 1em;
     margin-bottom: 0.2%;
 }
+
+button {
+    background: none;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    border: 1px solid white;
+    border-radius: 5px;
+}

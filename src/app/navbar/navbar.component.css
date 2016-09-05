@@ -21,7 +21,7 @@ a:hover {
 li {
     border: none;
     border-radius: 5px;
-    background: rgba(20,20,20,0.1);
+    background: rgba(20,20,20,0.05);
     width: 80vw;
     margin: 0 auto;
     margin-top: 1%;

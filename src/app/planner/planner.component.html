@@ -1,4 +1,4 @@
-    <ga-weather></ga-weather>
+    <ga-weather> </ga-weather>
     
     <div class="jumbotron" id="dailygoal">  <h3 id="daily"> {{dailyGoalsValue? dailyGoalsValue: "HELLO!"}} </h3></div>
     <ga-dailygoal (dailyGoalsChanged)="onChange($event)"> </ga-dailygoal>
@@ -20,6 +20,9 @@
       </div>
       <div class="form-group">
         <input class="form-control" placeholder="Assign to?" name="assign" #newassign>
+      </div>
+      <div class="form-group">
+        <input placeholder="By When?" type="date" class="form-control" >
       </div>
 
        

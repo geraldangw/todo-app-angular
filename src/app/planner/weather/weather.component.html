@@ -1,9 +1,9 @@
 
-    {{ makeRequest() }}
-      
+    <div *ngIf="!temperature"> {{ makeRequest() }} </div>
+          
       <p> {{country}}</p>
 
-      <p> TEMP: {{temperature}}°C | MAX: {{maxtemp}}°C | MIN: {{mintemp}}°C </p>
+      <p *ngIf="temperature"> TEMP: {{temperature}}°F | MAX: {{maxtemp}}°F | MIN: {{mintemp}}°F </p>
 
       <p> {{forecast}}</p>
        

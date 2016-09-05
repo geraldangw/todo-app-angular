@@ -14,6 +14,7 @@ export class WeatherComponent {
     mintemp: string;
     forecast: string;
     loading: boolean;
+    updated: string;
 
 constructor(public http: Http) {
   this.http = http;
@@ -28,6 +29,7 @@ constructor(public http: Http) {
             this.forecast = res.json().query.results.channel.item.condition.text;
             this.mintemp = res.json().query.results.channel.item.forecast[0].low;
             this.maxtemp = res.json().query.results.channel.item.forecast[0].high;
+            this.updated = new Date().toDateString();
             this.loading = false;
           });
 

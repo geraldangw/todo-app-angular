@@ -82,3 +82,8 @@ label {
     color: orange;
     margin: 0 auto;
 }
+input {
+    background: none;
+    border: 1px solid white;
+    color: white;
+}

@@ -92,6 +92,7 @@ input {
     border: 1px solid white;
     border-radius: 5px;
     margin-bottom: 3%;
+    font-size: 0.8em;
 }
 
 #deleteall:hover {
@@ -115,4 +116,15 @@ a {
 a:hover {
     color: #ED4D6E !important;
     text-decoration: none;
+}
+
+.taskcount {
+    color: orange;
+    font-size: 1em;
+    text-align: center;
+}
+
+#pending {
+    color: white;
+    text-align: center;
 }

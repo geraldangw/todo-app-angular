@@ -1,9 +1,15 @@
-    <div class="panel panel-default">
+    <div class="jumbotron">
     
     <label>YOUR GOAL TODAY?</label>
+ <div id="showdeleted"> <a  (click)="showDailyGoal()"> SHOW </a> <a (click)="hideDailyGoal()"> COLLAPSE </a> </div>
+
+<div *ngIf="showdailygoal === true">
+    
     <input id="input" type="text" placeholder="2 words of less please..." name="dailyInput" #newdailyInput>
       <button (click)="onChange(newdailyInput.value)"
               class="btn btn-default">
         SUBMIT
       </button>
+
+      </div>
     </div>

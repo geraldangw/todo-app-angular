@@ -1,10 +1,12 @@
     <ga-weather> </ga-weather>
     
     <div class="jumbotron" id="dailygoal">  <h3 id="daily"> {{dailyGoalsValue? dailyGoalsValue: "HELLO!"}} </h3></div>
+      <p id="pending"> You have {{priorityTasks().length + pendingTasks().length}} tasks pending! {{(priorityTasks().length + pendingTasks().length) < 8 ? "Almost There!": "Get on with it!"}}</p>
     <ga-dailygoal (dailyGoalsChanged)="onChange($event)"> </ga-dailygoal>
-    
+ 
     <div class="jumbotron" id="prioritytasks"> 
       <h3 id="priorityheader"> PINNED</h3>
+    <div *ngIf="showpinned === false"> <p class="taskcount"> {{priorityTasks().length}} Tasks </p> </div>
         <div id="showdeleted"> <a  (click)="showPinned()"> SHOW </a> <a (click)="hidePinned()"> COLLAPSE </a> </div>
         <div *ngIf="showpinned === true">
             <ga-task
@@ -17,7 +19,9 @@
     
     <form>
       <h3>ADD A TASK</h3>
+                <div id="showdeleted"> <a  (click)="showTaskForm()"> SHOW </a> <a (click)="hideTaskForm()"> COLLAPSE </a> </div>
 
+<div *ngIf="showtaskform === true">
       <div class="form-group">
         <input class="form-control" placeholder="Enter your task..." name="task" #newtask>
       </div>
@@ -37,12 +41,16 @@
               class="btn btn-default">
         SUBMIT
       </button>
+          </div>
     </form>
+
+
 
 
     
     <div class="jumbotron">
       <h3 class="taskheader"> PENDING </h3>
+      <div *ngIf="showpending === false"><p class="taskcount"> {{pendingTasks().length}} Tasks </p> </div>
        <div id="showdeleted"> <a  (click)="showPending()"> SHOW </a> <a (click)="hidePending()"> COLLAPSE </a> </div>
      <div *ngIf="showpending === true"> <ga-task
         *ngFor="let task of pendingTasks()"
@@ -53,7 +61,9 @@
     
     <div class="jumbotron">
       <h3 class="taskheader"> DONE </h3>
+     <div *ngIf="showdone === false"> <p class="taskcount"> {{doneTasks().length}} Tasks </p> </div>
       <div id="showdeleted"> <a  (click)="showDone()"> SHOW </a> <a (click)="hideDone()"> COLLAPSE </a> </div>
+      <button id="deleteall" (click)="deleteAll()"> DELETE ALL!</button>
       <div *ngIf="showdone"> <ga-task
         *ngFor="let task of doneTasks()"
         [task]="task">
@@ -63,8 +73,9 @@
 
           <div class="jumbotron">
       <h3 class="taskheader"> DELETED </h3>
+      <div *ngIf="showdeleted === false"><p class="taskcount"> {{deletedTasks().length}} Tasks </p> </div>
       <div id="showdeleted"> <a  (click)="showDeleted()"> SHOW </a> <a (click)="hideDeleted()"> COLLAPSE </a> </div>
-      <button id="deleteall" (click)="deleteAll()"> CLEAR ALL PERMANENTLY</button>
+      <button id="deleteall" (click)="emptyAll()"> EMPTY IT!</button>
       <div *ngIf="showdeleted === true"><ga-task
         *ngFor="let task of deletedTasks()"
         [task]="task">

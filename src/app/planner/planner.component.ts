@@ -17,6 +17,7 @@ export class PlannerComponent{
   showdone: boolean;
   showpending: boolean;
   showpinned: boolean;
+  showtaskform: boolean;
 
   tasks: Task[];
 
@@ -31,10 +32,10 @@ export class PlannerComponent{
       new Task('Buy my Ticket', "Gerald", true, true, false),
       new Task('Repeat', "Gerald", false, false, false),
       new Task('Apply for Visa', "Gerald", true, false, false),
-      new Task('Wake up early', "Gerald", true, false, false),
+      new Task('Wake up early', "Gerald", true, false, true),
       new Task('Drink Beer', "Jack", false, true, false),
       new Task('Find Places', "Tom", false, false, false),
-      new Task('Buy Groceries', "Ming", false, false, false),
+      new Task('Buy Groceries', "Ming", false, false, true),
       new Task('Find a house', "Tyler", false, true, false),
       new Task('Buy a turntable', "Gerald", true, true, false),
       new Task('Win at the horses', "Gerald", false, false, false),
@@ -42,6 +43,10 @@ export class PlannerComponent{
       new Task('Sleep more', "Gerald", true, false, false),
       new Task('Drink more', "Jack", false, true, false)
     ];
+    this.showpinned = false;
+    this.showdone = false;
+    this.showpending = false;
+    this.showdeleted = false;
   }
 
     addTask(task: HTMLInputElement, assign: HTMLInputElement, priority: HTMLInputElement): void {
@@ -83,10 +88,18 @@ export class PlannerComponent{
       return task.deleted === true;
     }
 
-    deleteAll(): any {
+    emptyAll(): any {
       for( var i = 0; i < this.tasks.length; i++) {
         if(this.tasks[i].deleted === true) {
           this.tasks.splice(this.tasks.indexOf(this.tasks[i]),1);
+        }
+      }
+    }
+
+      deleteAll(): any {
+      for( var i = 0; i < this.tasks.length; i++) {
+        if(this.tasks[i].status === true) {
+        this.tasks[i].deleted = true;
         }
       }
     }
@@ -107,7 +120,7 @@ export class PlannerComponent{
       this.showdone = false;
     }
 
-        showPending(): any {
+    showPending(): any {
       this.showpending = true;
     }
 
@@ -115,12 +128,20 @@ export class PlannerComponent{
       this.showpending = false;
     }
 
-            showPinned(): any {
+    showPinned(): any {
       this.showpinned = true;
     }
 
     hidePinned(): any {
       this.showpinned = false;
+    }
+
+    showTaskForm(): any {
+      this.showtaskform = true;
+    }
+
+    hideTaskForm(): any {
+      this.showtaskform = false;
     }
 
     onChange(value: string){

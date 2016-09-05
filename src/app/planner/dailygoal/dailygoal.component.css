@@ -1,6 +1,5 @@
-.panel {
+.jumbotron {
     width: 80vw;
-    height: 30vh;
     margin: 0 auto;
     background-color: rgba(20,20,20,0.05);
     border: none;
@@ -33,9 +32,24 @@ button {
     margin-top: 2%;
     color: white;
     background: none;
+    margin-bottom: 3%;
 }
 
 button:hover {
     background: none;
     color: orange;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    color: #ED4D6E !important;
+    text-decoration: none;
+}
+
+#showdeleted {
+    text-align: center;
+    margin-bottom: 2%;
 }

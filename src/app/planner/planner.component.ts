@@ -13,7 +13,10 @@ import { DailygoalComponent } from './dailygoal/dailygoal.component';
 })
 export class PlannerComponent{
   dailyGoalsValue: string;
-  show: boolean;
+  showdeleted: boolean;
+  showdone: boolean;
+  showpending: boolean;
+  showpinned: boolean;
 
   tasks: Task[];
 
@@ -89,11 +92,35 @@ export class PlannerComponent{
     }
 
     showDeleted(): any {
-      this.show = true;
+      this.showdeleted = true;
     }
 
     hideDeleted(): any {
-      this.show = false;
+      this.showdeleted = false;
+    }
+
+    showDone(): any {
+      this.showdone = true;
+    }
+
+    hideDone(): any {
+      this.showdone = false;
+    }
+
+        showPending(): any {
+      this.showpending = true;
+    }
+
+    hidePending(): any {
+      this.showpending = false;
+    }
+
+            showPinned(): any {
+      this.showpinned = true;
+    }
+
+    hidePinned(): any {
+      this.showpinned = false;
     }
 
     onChange(value: string){

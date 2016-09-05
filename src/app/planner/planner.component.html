@@ -54,5 +54,16 @@
       </ga-task>
       </div>
 
+          <div class="jumbotron">
+      <h3 class="taskheader"> DELETED </h3>
+      <div id="showdeleted"> <a  (click)="showDeleted()"> SHOW </a> <a (click)="hideDeleted()"> COLLAPSE </a> </div>
+      <button id="deleteall" (click)="deleteAll()"> CLEAR ALL PERMANENTLY</button>
+      <div *ngIf="show === true"><ga-task
+        *ngFor="let task of deletedTasks()"
+        [task]="task">
+      </ga-task>
+      </div>
+      </div>
+
 
 

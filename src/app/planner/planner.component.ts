@@ -13,6 +13,7 @@ import { DailygoalComponent } from './dailygoal/dailygoal.component';
 })
 export class PlannerComponent{
   dailyGoalsValue: string;
+  show: boolean;
 
   tasks: Task[];
 
@@ -69,6 +70,30 @@ export class PlannerComponent{
 
     checkPriority(task) : any {
     return task.priority === true && task.status === false && task.deleted === false; 
+    }
+
+    deletedTasks(): Task[] {
+      return this.tasks.filter(this.checkDeleted);
+    }
+
+    checkDeleted(task): any {
+      return task.deleted === true;
+    }
+
+    deleteAll(): any {
+      for( var i = 0; i < this.tasks.length; i++) {
+        if(this.tasks[i].deleted === true) {
+          this.tasks.splice(this.tasks.indexOf(this.tasks[i]),1);
+        }
+      }
+    }
+
+    showDeleted(): any {
+      this.show = true;
+    }
+
+    hideDeleted(): any {
+      this.show = false;
     }
 
     onChange(value: string){

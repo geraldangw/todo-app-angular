@@ -26,6 +26,11 @@ export class TaskComponent {
     return false;
   }
 
+  restore(): boolean {
+    this.task.restore();
+    return false;
+  }
+
   dailyGoalsChanged = new EventEmitter();
 
   onChange(value: string) {
@@ -61,6 +66,10 @@ export class Task {
 
   delete(): void {
     this.deleted = true;
+  }
+
+  restore(): void {
+    this.deleted = false;
   }
   
 }

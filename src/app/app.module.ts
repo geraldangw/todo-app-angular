@@ -8,11 +8,12 @@ import { PlannerComponent } from './planner/planner.component';
 import { TaskComponent } from './planner/task/task.component';
 import { DailygoalComponent } from './planner/dailygoal/dailygoal.component';
 import { AboutComponent } from './about/about.component';
+import { WeatherComponent } from './planner/weather/weather.component';
 import { routing } from './app.routes';
 
 @NgModule( {
     imports: [BrowserModule, routing, HttpModule],
-    declarations: [AppComponent, NavbarComponent, FooterComponent, PlannerComponent, TaskComponent, DailygoalComponent, AboutComponent ],
+    declarations: [AppComponent, NavbarComponent, FooterComponent, PlannerComponent, TaskComponent, DailygoalComponent, AboutComponent, WeatherComponent],
     bootstrap: [ AppComponent ]
 })
 

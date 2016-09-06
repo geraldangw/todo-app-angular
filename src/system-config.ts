@@ -41,6 +41,8 @@ const barrels: string[] = [
   'app/planner',
   'app/planner/task',
   'app/planner/dailygoal',
+  'app/about',
+  'app/planner/deleteditems',
   /** @cli-barrel */
 ];
 

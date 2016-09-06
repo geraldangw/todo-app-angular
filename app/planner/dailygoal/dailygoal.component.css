@@ -1,0 +1,55 @@
+.jumbotron {
+    width: 80vw;
+    margin: 0 auto;
+    background-color: rgba(20,20,20,0.05);
+    border: none;
+}
+
+label {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 4%;
+    color: white;
+    font-weight: normal;
+}
+
+input {
+    display: block;
+    height: 6vh;
+    width: 70vw;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2%;
+    color: white;
+    background: none;
+    margin-bottom: 3%;
+}
+
+button:hover {
+    background: none;
+    color: orange;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    color: #ED4D6E !important;
+    text-decoration: none;
+}
+
+#showdeleted {
+    text-align: center;
+    margin-bottom: 2%;
+}

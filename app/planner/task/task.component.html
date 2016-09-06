@@ -1,0 +1,32 @@
+    
+   
+    <div class="panel panel-default">
+    <div> <span id="task"> {{ task.task }} </span>
+      
+      <span id="assign"> {{ task.assign }} </span>
+     
+     <span *ngIf="task.status === true"> : ) </span>
+    
+
+
+     <a id="deleted" href (click)="delete()">
+            {{ task.deleted === false ? "del": ""}} 
+           </a>
+
+    <a id="done" href (click)="done()">
+              {{ task.status === false && task.deleted === false ? "clr" :""}}
+            </a>
+
+    <a id="impt" href (click)="prioritize()">
+      {{ task.priority === false && task.status === false && task.deleted === false ? "pin":""}}
+            </a>
+
+    <a id="restore" href (click)="restore()">
+      {{ task.deleted === true ? "rest":""}}
+      </a>
+
+
+    </div>
+
+    </div>
+    

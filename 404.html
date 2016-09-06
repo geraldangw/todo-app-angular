@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WHATTODO</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+  <base href="/todo-app/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      background-image: url("http://www.vactualpapers.com/web/images/March%2029%202016%20Mobile/Blurry%20Abstract%20Background%20Mobile%20HD%20Wallpaper14.jpg");
+      background-size: cover;
+      font-family: 'Cabin Sketch', cursive;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40vh;
+      color: grey;
+    }
+    #load {
+      color: orange;
+    }
+
+  </style>
+</head>
+<body>
+  <ga-root><h2 id="load"> Great things <br> come out <br> of patience... </h2></ga-root>
+  
+    <script src="vendor/es6-shim/es6-shim.js"></script>
+    <script src="vendor/reflect-metadata/Reflect.js"></script>
+    <script src="vendor/systemjs/dist/system.src.js"></script>
+    <script src="vendor/zone.js/dist/zone.js"></script>
+    <script>
+      System.import('system-config.js').then(function () {
+        System.import('main');
+      }).catch(console.error.bind(console));
+    </script>
+   <script src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

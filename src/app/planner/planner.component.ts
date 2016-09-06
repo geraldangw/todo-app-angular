@@ -17,75 +17,89 @@ export class PlannerComponent{
   showpending: boolean;
   showpinned: boolean;
   showtaskform: boolean;
+  showtoday: boolean;
 
   tasks: Task[];
 
   constructor() {
     this.tasks = [
-      new Task('Do a To Do App', "Gerald", false, false, false),
-      new Task('Sleep', "Gerald", false, true, false),
-      new Task('Eat', "John", false, false, false),
-      new Task('Talk', "Tom", false, false, false),
-      new Task('Rinse', "Ming", false, false, false),
-      new Task('Go to US', "Tyler", false, true, false),
-      new Task('Buy my Ticket', "Gerald", false, false, false),
-      new Task('Repeat', "Gerald", false, false, false),
-      new Task('Apply for Visa', "Gerald", true, false, false),
-      new Task('Wake up early', "Gerald", true, false, true),
-      new Task('Drink Beer', "Jack", false, true, false),
-      new Task('Find Places', "Tom", false, false, false),
-      new Task('Buy Groceries', "Ming", false, false, true),
-      new Task('Find a house', "Tyler", false, false, false),
-      new Task('Buy a turntable', "Gerald", true, true, false),
-      new Task('Win at the horses', "Gerald", false, false, false),
-      new Task('Bring out the thrash', "Gerald", true, false, false),
-      new Task('Sleep more', "Gerald", false, false, false),
-      new Task('Drink more', "Jack", false, true, false)
+      new Task('Do a To Do App', "Gerald", new Date, false, false, false),
+      new Task('Sleep', "Gerald", new Date("2016-09-6"), false, true, false),
+      new Task('Eat', "John", new Date, false, false, false),
+      new Task('Talk', "Tom", new Date("2016-09-9"), false, false, false),
+      new Task('Rinse', "Ming", new Date("2016-09-6"), false, false, false),
+      new Task('Go to US', "Tyler", new Date("2016-09-8"), false, true, false),
+      new Task('Buy my Ticket', "Gerald", new Date, false, false, false),
+      new Task('Repeat', "Gerald", new Date, false, false, false),
+      new Task('Apply for Visa', "Gerald", new Date("2016-09-8"), true, false, false),
+      new Task('Wake up early', "Gerald", new Date("2016-09-8"), true, false, true),
+      new Task('Drink Beer', "Jack", new Date("2016-09-9"), false, true, false),
+      new Task('Find Places', "Tom", new Date("2016-09-8"), false, false, false),
+      new Task('Buy Groceries', "Ming", new Date("2016-09-10"), false, false, true),
+      new Task('Find a house', "Tyler", new Date("2016-09-10"), false, false, false),
+      new Task('Buy a turntable', "Gerald", new Date("2016-09-5"), true, true, false),
+      new Task('Win at the horses', "Gerald", new Date("2016-09-6"), false, false, false),
+      new Task('Bring out the thrash', "Gerald", new Date, true, false, false),
+      new Task('Sleep more', "Gerald", new Date, false, false, false),
+      new Task('Drink more', "Jack", new Date, false, true, false)
     ];
     this.showpinned = false;
     this.showdone = false;
     this.showpending = false;
     this.showdeleted = false;
     this.showtaskform = false;
+    this.showtoday = false;
   }
 
-    addTask(task: HTMLInputElement, assign: HTMLInputElement, priority: HTMLInputElement): void {
-    this.tasks.push(new Task(task.value, assign.value, false, priority.checked, false));
+    addTask(task: HTMLInputElement, assign: HTMLInputElement,deadline: HTMLInputElement, priority: HTMLInputElement): void {
+    this.tasks.push(new Task(task.value, assign.value, deadline.valueAsDate, false, priority.checked, false));
     task.value = '';
     assign.value = '';
     priority.checked = false;
   }
 
     pendingTasks(): Task[] {
-    return this.tasks.filter(this.checkPending);
+    return this.tasks.filter(this.checkPending).sort((a: Task, b: Task) => a.deadline.getTime() - b.deadline.getTime());
     }
 
     checkPending(task) : any {
-    return task.status === false && task.priority === false && task.deleted === false; 
+      let date = new Date;
+    return task.status === false && task.priority === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth(); 
     }
 
     doneTasks(): Task[] {
-    return this.tasks.filter(this.checkDone);
+    return this.tasks.filter(this.checkDone).sort((a: Task, b: Task) => a.deadline.getTime() - b.deadline.getTime());
     }
 
     checkDone(task) : any {
+      let date = new Date;
     return task.status === true && task.deleted === false; 
     }
 
     priorityTasks(): Task[] {
-    return this.tasks.filter(this.checkPriority);
+    return this.tasks.filter(this.checkPriority).sort((a: Task, b: Task) => a.deadline.getTime() - b.deadline.getTime());
     }
 
     checkPriority(task) : any {
-    return task.priority === true && task.status === false && task.deleted === false; 
+      let date = new Date;
+    return task.priority === true && task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth(); 
     }
 
     deletedTasks(): Task[] {
-      return this.tasks.filter(this.checkDeleted);
+      return this.tasks.filter(this.checkDeleted).sort((a: Task, b: Task) => a.deadline.getTime() - b.deadline.getTime());
     }
 
     checkDeleted(task): any {
       return task.deleted === true;
+    }
+
+     todaysTasks(): Task[] {
+      return this.tasks.filter(this.checkToday).sort((a: Task, b: Task) => a.deadline.getTime() - b.deadline.getTime());
+    }
+
+    checkToday(task): any {
+      let date = new Date;
+      return task.deadline.getDate() === date.getDate() && task.deadline.getMonth() === date.getMonth() && task.status === false && task.deleted === false;
     }
 
     emptyAll(): any {
@@ -110,6 +124,14 @@ export class PlannerComponent{
 
     hideDeleted(): any {
       this.showdeleted = false;
+    }
+
+     showToday(): any {
+      this.showtoday = true;
+    }
+
+    hideToday(): any {
+      this.showtoday = false;
     }
 
     showDone(): any {

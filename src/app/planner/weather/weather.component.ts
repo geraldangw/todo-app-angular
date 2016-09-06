@@ -24,7 +24,7 @@ constructor(public http: Http) {
     .subscribe((res: Response) => {
             this.country = res.json().query.results.channel.location.city.toUpperCase();
             this.temperature = res.json().query.results.channel.item.condition.temp;
-            this.forecast = res.json().query.results.channel.item.condition.text;
+            this.forecast = res.json().query.results.channel.item.condition.text.toUpperCase();
             this.mintemp = res.json().query.results.channel.item.forecast[0].low;
             this.maxtemp = res.json().query.results.channel.item.forecast[0].high;
             this.updated = new Date().toDateString();

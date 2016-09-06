@@ -10,6 +10,11 @@ import { Component, EventEmitter } from '@angular/core';
 })
 export class TaskComponent {
   task: Task;
+  date: Date;
+
+  constructor() {
+    this.date = new Date;
+  }
 
   done(): boolean {
     this.task.done();
@@ -47,10 +52,12 @@ export class Task {
   assign: string;
   priority: boolean;
   deleted: boolean;
+  deadline: Date;
 
-    constructor(task: string, assign: string, status?: boolean, priority?:boolean, deleted?:boolean) {
+    constructor(task: string, assign: string, deadline: Date, status?: boolean, priority?:boolean, deleted?:boolean) {
     this.task = task;
     this.assign = assign;
+    this.deadline = deadline;
     this.status = status || false;
     this.priority = priority || false;
     this.deleted = deleted || false;

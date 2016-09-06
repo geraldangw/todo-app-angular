@@ -3,9 +3,11 @@
     <div class="panel panel-default">
     <div> <span id="task"> {{ task.task }} </span>
       
-      <span id="assign"> {{ task.assign }} </span>
+      <span *ngIf="task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()" id="assign"> {{ task.deadline.getDate() }}/{{ task.deadline.getMonth() + 1}}</span>
      
      <span *ngIf="task.status === true"> : ) </span>
+
+     <span id="overdue" *ngIf="task.deadline.getDate() < date.getDate() && task.deadline.getMonth() === date.getMonth() && task.status === false && task.deleted === false "> !!!! </span>
     
 
 
@@ -18,7 +20,8 @@
             </a>
 
     <a id="impt" href (click)="prioritize()">
-      {{ task.priority === false && task.status === false && task.deleted === false ? "pin":""}}
+     
+      {{ task.priority === false && task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth() ? "pin":""}}
             </a>
 
     <a id="restore" href (click)="restore()">

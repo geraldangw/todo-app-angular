@@ -28,18 +28,18 @@ export class PlannerComponent{
       new Task('Talk', "Tom", false, false, false),
       new Task('Rinse', "Ming", false, false, false),
       new Task('Go to US', "Tyler", false, true, false),
-      new Task('Buy my Ticket', "Gerald", true, true, false),
+      new Task('Buy my Ticket', "Gerald", false, false, false),
       new Task('Repeat', "Gerald", false, false, false),
       new Task('Apply for Visa', "Gerald", true, false, false),
       new Task('Wake up early', "Gerald", true, false, true),
       new Task('Drink Beer', "Jack", false, true, false),
       new Task('Find Places', "Tom", false, false, false),
       new Task('Buy Groceries', "Ming", false, false, true),
-      new Task('Find a house', "Tyler", false, true, false),
+      new Task('Find a house', "Tyler", false, false, false),
       new Task('Buy a turntable', "Gerald", true, true, false),
       new Task('Win at the horses', "Gerald", false, false, false),
       new Task('Bring out the thrash', "Gerald", true, false, false),
-      new Task('Sleep more', "Gerald", true, false, false),
+      new Task('Sleep more', "Gerald", false, false, false),
       new Task('Drink more', "Jack", false, true, false)
     ];
     this.showpinned = false;

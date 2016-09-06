@@ -8,7 +8,6 @@ import { DailygoalComponent } from './dailygoal/dailygoal.component';
   selector: 'ga-planner',
   templateUrl: 'planner.component.html',
   styleUrls: ['planner.component.css'],
-  directives: [TaskComponent, DailygoalComponent, WeatherComponent],
   inputs: ['dailyGoalsValue']
 })
 export class PlannerComponent{

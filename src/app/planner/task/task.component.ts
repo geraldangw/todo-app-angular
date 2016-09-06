@@ -64,11 +64,11 @@ export class Task {
     this.priority = true;
   }
 
-  delete(): void {
+   delete(): void {
     this.deleted = true;
   }
 
-  restore(): void {
+   restore(): void {
     this.deleted = false;
   }
   

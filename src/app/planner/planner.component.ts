@@ -46,6 +46,7 @@ export class PlannerComponent{
     this.showdone = false;
     this.showpending = false;
     this.showdeleted = false;
+    this.showtaskform = false;
   }
 
     addTask(task: HTMLInputElement, assign: HTMLInputElement, priority: HTMLInputElement): void {

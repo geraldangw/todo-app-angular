@@ -1,7 +1,7 @@
     <div class="jumbotron">
     
     <label>YOUR GOAL TODAY?</label>
- <div id="showdeleted"> <a  (click)="showDailyGoal()"> SHOW </a> <a (click)="hideDailyGoal()"> COLLAPSE </a> </div>
+ <div id="showdeleted"> <a *ngIf="showdailygoal === false"  (click)="showDailyGoal()"> ADD ! </a> <a *ngIf="showdailygoal === true" (click)="hideDailyGoal()"> COLLAPSE </a> </div>
 
 <div *ngIf="showdailygoal === true">
     

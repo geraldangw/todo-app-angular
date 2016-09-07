@@ -98,7 +98,7 @@ input {
 #deleteall:hover {
     color: red;
 }
-#showdeleted {
+#switch {
     color: white;
     display: block;
     text-align: center;
@@ -127,4 +127,7 @@ a:hover {
 #pending {
     color: white;
     text-align: center;
+}
+#disappear {
+    display: none;
 }

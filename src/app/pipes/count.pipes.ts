@@ -1,0 +1,72 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: "todaystaskscount",
+  pure: false
+})
+export class TodaysTasksCountPipe implements PipeTransform {
+  transform(tasks: any, Task: any ) {
+     let date = new Date;
+    if (tasks == null) {
+      return null;
+    }
+    return tasks.filter((task: any) => task.deadline.getDate() === date.getDate() && task.deadline.getMonth() === date.getMonth() && task.status === false && task.deleted === false).length;
+  }
+}
+
+@Pipe({
+  name: "pinnedtaskscount",
+  pure: false
+})
+export class PinnedTasksCountPipe implements PipeTransform {
+  transform(tasks: any, Task: any ) {
+     let date = new Date;
+    if (tasks == null) {
+      return null;
+    }
+    return tasks.filter((task: any) => task.priority === true && task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()).length;
+  }
+}
+
+
+@Pipe({
+  name: "pendingtaskscount",
+  pure: false
+})
+export class PendingTasksCountPipe implements PipeTransform {
+  transform(tasks: any, Task: any ) {
+     let date = new Date;
+    if (tasks == null) {
+      return null;
+    }
+    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()).length;
+  }
+}
+
+@Pipe({
+  name: "donetaskscount",
+  pure: false
+})
+export class DoneTasksCountPipe implements PipeTransform {
+  transform(tasks: any, Task: any ) {
+     let date = new Date;
+    if (tasks == null) {
+      return null;
+    }
+    return tasks.filter((task: any) => task.status === true && task.deleted === false).length;
+  }
+}
+
+@Pipe({
+  name: "deletedtaskscount",
+  pure: false
+})
+export class DeletedTasksCountPipe implements PipeTransform {
+  transform(tasks: any, Task: any ) {
+     let date = new Date;
+    if (tasks == null) {
+      return null;
+    }
+    return tasks.filter((task: any) => task.deleted === true).length;
+  }
+}

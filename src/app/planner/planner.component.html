@@ -1,32 +1,29 @@
   
       <ga-weather> </ga-weather>
 
-
-    <div class="jumbotron" id="dailygoal">  <h3 id="daily"> {{dailyGoalsValue? dailyGoalsValue: "HELLO!"}} </h3></div>
-      <p id="pending"> YOU HAVE {{todaysTasks().length}} TASKS LEFT TODAY... <br> {{todaysTasks().length < 3 ? "ALMOST THERE!": "GET ON WITH IT!"}}</p>
+    <div class="jumbotron" id="dailygoal">  <h3 id="daily"> {{dailyGoalsValue}} </h3></div>
+      <p id="pending"> YOU HAVE {{tasks | todaystaskscount}} TASKS LEFT TODAY... <br> {{(tasks | todaystaskscount) < 3 ? "ALMOST THERE!": "GET ON WITH IT!"}}</p>
     <ga-dailygoal (dailyGoalsChanged)="onChange($event)"> </ga-dailygoal>
- 
 
     <div class="jumbotron" id="todaystasks"> 
-      <h3 id="priorityheader"> TODAY'S TASKS</h3>
-    <div *ngIf="showtoday === false"> <p class="taskcount"> {{todaysTasks().length}} Tasks </p> </div>
-        <div id="showdeleted"> <a *ngIf="showtoday === false"  (click)="showToday()"> SHOW </a> <a *ngIf="showtoday=== true" (click)="hideToday()"> COLLAPSE </a> </div>
-        <div *ngIf="showtoday === true">
+       <h3 id="priorityheader"> TODAY'S TASKS</h3>
+     <div *ngIf="!switchtoday"> <p class="taskcount"> {{tasks | todaystaskscount}} Tasks </p>  </div>
+        <div id="switch"> <a *ngIf="!switchtoday"  (click)="switchToday()"> SHOW </a> <a *ngIf="switchtoday" (click)="switchToday()"> COLLAPSE </a> </div>
+        <div *ngIf="switchtoday">
             <ga-task
-        *ngFor="let task of todaysTasks()"
+        *ngFor="let task of tasks | todaystasks"
         [task]="task">
       </ga-task>
       </div>
       </div>
 
-
     <div class="jumbotron" id="prioritytasks"> 
       <h3 id="priorityheader"> PINNED</h3>
-    <div *ngIf="showpinned === false"> <p class="taskcount"> {{priorityTasks().length}} Tasks </p> </div>
-        <div id="showdeleted"> <a *ngIf="showpinned === false"  (click)="showPinned()"> SHOW </a> <a *ngIf="showpinned === true" (click)="hidePinned()"> COLLAPSE </a> </div>
-        <div *ngIf="showpinned === true">
+    <div *ngIf="!switchpinned"> <p class="taskcount"> {{ tasks | pinnedtaskscount}} Tasks </p> </div>
+        <div id="switch"> <a *ngIf="!switchpinned"  (click)="switchPinned()"> SHOW </a> <a *ngIf="switchpinned" (click)="switchPinned()"> COLLAPSE </a> </div>
+        <div *ngIf="switchpinned">
             <ga-task
-        *ngFor="let task of priorityTasks()"
+        *ngFor="let task of tasks | pinnedtasks"
         [task]="task">
       </ga-task>
       </div>
@@ -35,9 +32,9 @@
     
     <form>
       <h3>ADD A TASK</h3>
-<div id="showdeleted"> <a *ngIf="showtaskform === false" (click)="showTaskForm()"> ADD ! </a> <a *ngIf="showtaskform === true" (click)="hideTaskForm()"> COLLAPSE </a> </div>
+      <div id="switch"> <a *ngIf="!switchtaskform" (click)="switchTaskForm()"> ADD ! </a> <a *ngIf="switchtaskform" (click)="switchTaskForm()"> COLLAPSE </a> </div>
 
-<div *ngIf="showtaskform === true">
+      <div *ngIf="switchtaskform">
       <div class="form-group">
         <input class="form-control" placeholder="Enter your task..." name="task" #newtask>
       </div>
@@ -47,29 +44,21 @@
       <div class="form-group">
         <input type="date" class="form-control" name="deadline" #newdeadline >
       </div>
-
-       
         <input id="checkbox" class="form-control" type="checkbox" name="priority" #newpriority>  
         <label id="pin">pin </label>
-
-
       <button type= "button" (click)="addTask(newtask, newassign, newdeadline, newpriority)"
               class="btn btn-default">
         SUBMIT
       </button>
           </div>
     </form>
-
-
-
-
     
     <div class="jumbotron">
       <h3 class="taskheader"> PENDING </h3>
-      <div *ngIf="showpending === false"><p class="taskcount"> {{pendingTasks().length}} Tasks </p> </div>
-       <div id="showdeleted"> <a *ngIf="showpending === false" (click)="showPending()"> SHOW </a> <a *ngIf="showpending === true" (click)="hidePending()"> COLLAPSE </a> </div>
-     <div *ngIf="showpending === true"> <ga-task
-        *ngFor="let task of pendingTasks()"
+      <div *ngIf="!switchpending"><p class="taskcount"> {{ tasks | pendingtaskscount}} Tasks </p> </div>
+       <div id="switch"> <a *ngIf="!switchpending" (click)="switchPending()"> SHOW </a> <a *ngIf="switchpending" (click)="switchPending()"> COLLAPSE </a> </div>
+     <div *ngIf="switchpending === true"> <ga-task
+        *ngFor="let task of tasks | pendingtasks"
         [task]="task">
       </ga-task>
       </div>
@@ -77,11 +66,11 @@
     
     <div class="jumbotron">
       <h3 class="taskheader"> DONE </h3>
-     <div *ngIf="showdone === false"> <p class="taskcount"> {{doneTasks().length}} Tasks </p> </div>
-      <div id="showdeleted"> <a *ngIf="showdone === false" (click)="showDone()"> SHOW </a> <a *ngIf="showdone === true" (click)="hideDone()"> COLLAPSE </a> </div>
+     <div *ngIf="!switchdone"> <p class="taskcount"> {{ tasks | donetaskscount }} Tasks </p> </div>
+      <div id="switch"> <a *ngIf="!switchdone" (click)="switchDone()"> SHOW </a> <a *ngIf="switchdone" (click)="switchDone()"> COLLAPSE </a> </div>
       <button id="deleteall" (click)="deleteAll()"> DELETE ALL!</button>
-      <div *ngIf="showdone"> <ga-task
-        *ngFor="let task of doneTasks()"
+      <div *ngIf="switchdone"> <ga-task
+        *ngFor="let task of tasks | donetasks"
         [task]="task">
       </ga-task>
       </div>
@@ -89,11 +78,11 @@
 
       <div class="jumbotron">
       <h3 class="taskheader"> DELETED </h3>
-      <div *ngIf="showdeleted === false"><p class="taskcount"> {{deletedTasks().length}} Tasks </p> </div>
-      <div id="showdeleted"> <a *ngIf="showdeleted === false" (click)="showDeleted()"> SHOW </a> <a *ngIf="showdeleted === true" (click)="hideDeleted()"> COLLAPSE </a> </div>
+      <div *ngIf="!switchdeleted"><p class="taskcount"> {{ tasks | deletedtaskscount }} Tasks </p> </div>
+      <div id="switch"> <a *ngIf="!switchdeleted" (click)="switchDeleted()"> SHOW </a> <a *ngIf="switchdeleted" (click)="switchDeleted()"> COLLAPSE </a> </div>
       <button id="deleteall" (click)="emptyAll()"> EMPTY IT!</button>
-      <div *ngIf="showdeleted === true"><ga-task
-        *ngFor="let task of deletedTasks()"
+      <div *ngIf="switchdeleted"><ga-task
+        *ngFor="let task of tasks | deletedtasks"
         [task]="task">
       </ga-task>
       </div>

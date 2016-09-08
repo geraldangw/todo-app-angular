@@ -6,74 +6,54 @@
     height: 4vh;
 }
 
-a {
-    color: white !important;
-    border-radius:80px;
-    font-size: 12px;
+#task {
+    float: left;
 }
 
-a:hover {
-    text-decoration: none;
-}
-
-span {
-    color: white;
-    margin-left: 1%;
-}
-
-#assign {
+#deadline {
     color: orange;
     margin-left: 2%;
-    border: none;
-}
-
-
-#impt {
-    float: right;
-    color: white!important;
-    margin-right: 2%;
-    background-color:#2274A5;
-    width: 7vw;
-    width: 4vh;
-    text-align: center;
-}
-
-#deleted {
-    float: right;
-    margin-right: 2%;
-    color: white !important;
-    background-color:#ED4D6E;
-    border-radius: 80px;
-    width: 7vw;
-    width: 4vh;
-    text-align: center;
-}
-
-#done {
-    float: right;
-    margin-right: 2%;
-    background-color:#648767;
-    border-radius: 80px;
-     width: 7vw;
-    width: 4vh;
-    text-align: center;
-}
-
-#restore {
-    float: right;
-    margin-right: 2%;
-    background-color:#F78764;
-    border-radius: 80px;
-    width: 7vw;
-    width: 4vh;
-    text-align: center;
-}
-
-#task {
-    font-size: 1em;
+    float: left;
 }
 
 #overdue {
     color: #FB3640;
     font-weight: bold;
+    float: left;
 }
+
+#done {
+    float: left;
+    margin-left: 2%;
+    color: #86A989;
+}
+
+#pin, #clr, #del, #rest {
+    float: right;
+    color: white!important;
+    margin-right: 2%;
+    border-radius: 80px;
+    width: 7vw;
+    width: 4vh;
+    text-align: center;
+}
+
+#pin {
+    background-color:#2274A5;
+}
+
+#clr {
+    background-color:#648767;
+}
+
+#del {
+    background-color:#ED4D6E;
+}
+
+#rest {
+    background-color:#F78764;
+}
+
+
+
+

@@ -9,6 +9,17 @@ h3 {
     font-size: 2em;
 }
 
+p {
+    color: orange;
+    font-size: 1em;
+}
+
+a {
+    color: #A9FBC3 !important;
+    display: block;
+    margin-bottom: 2%;
+}
+
 button {
     margin: 0 auto;
     display: block;

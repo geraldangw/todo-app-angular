@@ -1,81 +1,20 @@
   
-      <ga-weather> </ga-weather>
+    <ga-weather> </ga-weather>
 
-    <div class="jumbotron" id="dailygoal">  <h3 id="daily"> {{dailyGoalsValue}} </h3></div>
-      <p id="pending"> YOU HAVE {{tasks | todaystaskscount}} TASKS LEFT TODAY...</p>
+    <!--rendering the event from dailygoals component and also adding task status-->
+    <div class="jumbotron">  <h3> {{dailyGoalsValue}} </h3></div>
+    <p> YOU HAVE {{tasks | todaystaskscount}} TASKS LEFT TODAY...</p>
     <ga-dailygoal (dailyGoalsChanged)="onChange($event)"> </ga-dailygoal>
 
-
-    <div class="jumbotron" id="todaystasks"> 
-       <h3 id="priorityheader"> TODAY'S TASKS</h3>
-     <div *ngIf="!switchtoday"> <p class="taskcount"> {{tasks | todaystaskscount}} Tasks </p>  </div>
-        <div id="switch"> <a *ngIf="!switchtoday"  (click)="switchToday()"> SHOW </a> <a *ngIf="switchtoday" (click)="switchToday()"> COLLAPSE </a> </div>
-        <div *ngIf="switchtoday">
-            <ga-task
-        *ngFor="let task of tasks | todaystasks"
-        [task]="task">
-      </ga-task>
-      </div>
-      </div>
-
-           <form>
-      <h3>ADD A TASK</h3>
-      <div id="switch"> <a *ngIf="!switchtaskform" (click)="switchTaskForm()"> ADD ! </a> <a *ngIf="switchtaskform" (click)="switchTaskForm()"> COLLAPSE </a> </div>
-
-      <div *ngIf="switchtaskform">
-      <div class="form-group">
-        <input class="form-control" placeholder="Enter your task..." name="task" #newtask>
-      </div>
-      <div class="form-group">
-        <input class="form-control" placeholder="Comments?" name="assign" #newassign>
-      </div>
-      <div class="form-group">
-        <input id="dateform" type="date" class="form-control" name="deadline" #newdeadline >
-      </div>
-        <input id="checkbox" class="form-control" type="checkbox" name="priority" #newpriority>  
-        <label id="pin">pin </label>
-      <button type= "button" (click)="addTask(newtask, newassign, newdeadline, newpriority)"
-              class="btn btn-default">
-        SUBMIT
-      </button>
-          </div>
-    </form>
-
-    <div class="jumbotron" id="prioritytasks"> 
-      <h3 id="priorityheader"> PINNED</h3>
-    <div *ngIf="!switchpinned"> <p class="taskcount"> {{ tasks | pinnedtaskscount}} Tasks </p> </div>
-        <div id="switch"> <a *ngIf="!switchpinned"  (click)="switchPinned()"> SHOW </a> <a *ngIf="switchpinned" (click)="switchPinned()"> COLLAPSE </a> </div>
-        <div *ngIf="switchpinned">
-            <ga-task
-        *ngFor="let task of tasks | pinnedtasks"
-        [task]="task">
-      </ga-task>
-      </div>
-      
-      </div>
+    <ga-taskform> </ga-taskform>
+    <ga-todaystasks> </ga-todaystasks>
+    <ga-pinnedtasks></ga-pinnedtasks>
+    <ga-pendingtasks></ga-pendingtasks>
+    <ga-donetasks><ga-donetasks>
     
-    <div class="jumbotron">
-      <h3 class="taskheader"> PENDING </h3>
-      <div *ngIf="!switchpending"><p class="taskcount"> {{ tasks | pendingtaskscount}} Tasks </p> </div>
-       <div id="switch"> <a *ngIf="!switchpending" (click)="switchPending()"> SHOW </a> <a *ngIf="switchpending" (click)="switchPending()"> COLLAPSE </a> </div>
-     <div *ngIf="switchpending === true"> <ga-task
-        *ngFor="let task of tasks | pendingtasks"
-        [task]="task">
-      </ga-task>
-      </div>
-      </div>
+
     
-    <div class="jumbotron">
-      <h3 class="taskheader"> DONE </h3>
-     <div *ngIf="!switchdone"> <p class="taskcount"> {{ tasks | donetaskscount }} Tasks </p> </div>
-      <div id="switch"> <a *ngIf="!switchdone" (click)="switchDone()"> SHOW </a> <a *ngIf="switchdone" (click)="switchDone()"> COLLAPSE </a> </div>
-      <button *ngIf="switchdone" id="deleteall" (click)="deleteAll()"> DELETE ALL!</button>
-      <div *ngIf="switchdone"> <ga-task
-        *ngFor="let task of tasks | donetasks"
-        [task]="task">
-      </ga-task>
-      </div>
-      </div>
+  
 
 
 

@@ -1,0 +1,10 @@
+    
+    
+<div class="jumbotron" id="todaystasks"> 
+       <h3> TODAY'S TASKS</h3>
+     <div *ngIf="!switchtoday"> <p> {{tasks | todaystaskscount}} Tasks </p>  </div>
+        <a *ngIf="!switchtoday"  (click)="switchToday()"> SHOW </a> <a *ngIf="switchtoday" (click)="switchToday()"> COLLAPSE </a>
+        <div *ngIf="switchtoday">
+            <ga-task *ngFor="let task of tasks | todaystasks" [task]="task"> </ga-task>
+        </div>
+</div>

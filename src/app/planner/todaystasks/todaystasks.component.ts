@@ -4,13 +4,16 @@ import { Task, TaskComponent } from '../task/task.component';
 
 @Component({
   moduleId: module.id,
-  selector: 'ga-deletedtasks',
-  templateUrl: 'deletedtasks.component.html',
-  styleUrls: ['deletedtasks.component.css']
+  selector: 'ga-todaystasks',
+  templateUrl: 'todaystasks.component.html',
+  styleUrls: ['todaystasks.component.css']
 })
-export class DeletedtasksComponent implements OnInit {
+export class TodaystasksComponent implements OnInit {
   //initializing tasks as Task array from Service
   tasks: Task[]; 
+
+  //state declaration for collapsible view
+  switchtoday: boolean = false;
 
   //getting data from Service
   constructor(@Inject(TasksService) private _TasksService: TasksService) { }
@@ -27,13 +30,9 @@ export class DeletedtasksComponent implements OnInit {
     this.getTasks();
   }
 
-  //delete all items in the archive permanently from the array
-  emptyAll(): any {
-    for( var i = 0; i < this.tasks.length; i++) {
-    if(this.tasks[i].deleted === true) {
-    this.tasks.splice(this.tasks.indexOf(this.tasks[i]),1);
-      }
-    }
+  //function to switch state to make collapsible work
+  switchToday(): any {
+    this.switchtoday = !this.switchtoday;
   }
 
 }

@@ -1,0 +1,9 @@
+    
+    <div class="jumbotron">
+      <h3 > PENDING </h3>
+      <div *ngIf="!switchpending"><p> {{ tasks | pendingtaskscount}} Tasks </p> </div>
+       <a *ngIf="!switchpending" (click)="switchPending()"> SHOW </a> <a *ngIf="switchpending" (click)="switchPending()"> COLLAPSE </a>
+      <div *ngIf="switchpending === true"> 
+       <ga-task *ngFor="let task of tasks | pendingtasks" [task]="task"></ga-task>
+      </div>
+      </div>

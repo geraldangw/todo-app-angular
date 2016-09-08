@@ -1,5 +1,7 @@
 import { Task } from './task.component';
 
+
+//exporting seed tasks to mock data
 export const TASK: Task[] = [
       new Task('Do a To Do App', "Gerald", new Date, false, false, false),
       new Task('Sleep', "Gerald", new Date("2016-09-6"), false, true, false),

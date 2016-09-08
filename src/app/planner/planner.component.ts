@@ -4,8 +4,6 @@ import { TasksService } from './planner.service';
 import { TaskComponent, Task } from './task/task.component';
 import { WeatherComponent } from './weather/weather.component';
 import { DailygoalComponent } from './dailygoal/dailygoal.component';
-import { TodaysTasksPipe, PendingTasksPipe, PinnedTasksPipe, DoneTasksPipe, DeletedTasksPipe } from '../pipes/status.pipes';
-import { TodaysTasksCountPipe, PendingTasksCountPipe, PinnedTasksCountPipe, DoneTasksCountPipe, DeletedTasksCountPipe } from '../pipes/count.pipes';
 
 @Component({
   moduleId: module.id,
@@ -19,62 +17,25 @@ export class PlannerComponent implements OnInit{
   
   tasks: Task[];
  
+ //set property for event output from dailygoals component with a default value of "Helloz!"
   dailyGoalsValue: string = "Helloz!";
-  switchtoday: boolean = false;
-  switchpinned: boolean = false;
-  switchpending: boolean = false;
-  switchtaskform: boolean = false;
-  switchdone: boolean = false;
-  switchdeleted: boolean = false;
- 
+  
+//injecting service to make data available
   constructor(@Inject(TasksService) private _TasksService: TasksService) { }
 
+//function get the required data from seed-tasks via TasksService
   getTasks(): void {
     this._TasksService.getSeedTasks().then(tasks => {
     this.tasks = tasks;
     })
   }
 
+//running get Tasks function to make data available before page load
   ngOnInit(): void {
     this.getTasks();
   }
  
-  addTask(task: HTMLInputElement, assign: HTMLInputElement,deadline: HTMLInputElement, priority: HTMLInputElement): void {
-    this.tasks.push(new Task(task.value, assign.value, deadline.valueAsDate, false, priority.checked, false));
-    task.value = '';
-    assign.value = '';
-    priority.checked = false;
-  }
-
-  deleteAll(): any {
-    for( var i = 0; i < this.tasks.length; i++) {
-   if(this.tasks[i].status === true) {
-    this.tasks[i].deleted = true;
-      }
-    }
-  }
-
-
-  switchToday(): any {
-    this.switchtoday = !this.switchtoday;
-  }
-
-  switchDone(): any {
-    this.switchdone = !this.switchdone;
-  }
-
-  switchPending(): any {
-    this.switchpending = !this.switchpending;
-  }
-
-  switchPinned(): any {
-    this.switchpinned = !this.switchpinned;
-  }
-
-  switchTaskForm(): any {
-    this.switchtaskform = !this.switchtaskform;
-  }
-
+ //getting value of event emitted from dailygoals component
   onChange(value: string){
     this.dailyGoalsValue = value;
   }

@@ -1,8 +1,6 @@
+      
       <div class="jumbotron">
-      <h3 class="taskheader"> DELETED TASKS </h3>
+      <h3> DELETED TASKS </h3>
       <button  id="deleteall" (click)="emptyAll()"> EMPTY IT!</button>
-      <ga-task
-        *ngFor="let task of tasks | deletedtasks"
-        [task]="task">
-      </ga-task>
+      <ga-task *ngFor="let task of tasks | deletedtasks" [task]="task"> </ga-task>
       </div>

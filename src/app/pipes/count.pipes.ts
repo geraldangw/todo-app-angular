@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//pipe to count total number of today's tasks
 @Pipe({
   name: "todaystaskscount",
   pure: false
 })
 export class TodaysTasksCountPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -14,13 +15,14 @@ export class TodaysTasksCountPipe implements PipeTransform {
   }
 }
 
+//pipe to count total number of pinned tasks
 @Pipe({
   name: "pinnedtaskscount",
   pure: false
 })
 export class PinnedTasksCountPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -28,14 +30,14 @@ export class PinnedTasksCountPipe implements PipeTransform {
   }
 }
 
-
+//pipe to count total number of pending tasks
 @Pipe({
   name: "pendingtaskscount",
   pure: false
 })
 export class PendingTasksCountPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -43,13 +45,14 @@ export class PendingTasksCountPipe implements PipeTransform {
   }
 }
 
+//pipe to count number of done tasks
 @Pipe({
   name: "donetaskscount",
   pure: false
 })
 export class DoneTasksCountPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -57,13 +60,14 @@ export class DoneTasksCountPipe implements PipeTransform {
   }
 }
 
+//pipe to count number of deleted tasks
 @Pipe({
   name: "deletedtaskscount",
   pure: false
 })
 export class DeletedTasksCountPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }

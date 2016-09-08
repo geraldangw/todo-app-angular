@@ -8,4 +8,5 @@ if (environment.production) {
   enableProdMode();
 }
 
+//running app via bootstrap with live reload
 platformBrowserDynamic().bootstrapModule(AppModule);

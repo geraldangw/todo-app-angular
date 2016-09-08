@@ -1,12 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+
+//pipe to filter only todays tasks
 @Pipe({
   name: "todaystasks",
   pure: false
 })
 export class TodaysTasksPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -14,13 +16,14 @@ export class TodaysTasksPipe implements PipeTransform {
   }
 }
 
+//pipe to filter pinned tasks, excluding todays tasks
 @Pipe({
   name: "pinnedtasks",
   pure: false
 })
 export class PinnedTasksPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -29,13 +32,14 @@ export class PinnedTasksPipe implements PipeTransform {
 }
 
 
+//pipe to filter pending tasks, excluding pinned and todays tasks
 @Pipe({
   name: "pendingtasks",
   pure: false
 })
 export class PendingTasksPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -43,13 +47,14 @@ export class PendingTasksPipe implements PipeTransform {
   }
 }
 
+//pipe to filter done tasks thats are not deleted
 @Pipe({
   name: "donetasks",
   pure: false
 })
 export class DoneTasksPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }
@@ -57,13 +62,15 @@ export class DoneTasksPipe implements PipeTransform {
   }
 }
 
+
+//pipe to filter deleted tasks
 @Pipe({
   name: "deletedtasks",
   pure: false
 })
 export class DeletedTasksPipe implements PipeTransform {
   transform(tasks: any, Task: any ) {
-     let date = new Date;
+    let date = new Date;
     if (tasks == null) {
       return null;
     }

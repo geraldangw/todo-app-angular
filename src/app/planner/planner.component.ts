@@ -46,14 +46,6 @@ export class PlannerComponent implements OnInit{
     priority.checked = false;
   }
 
-  emptyAll(): any {
-    for( var i = 0; i < this.tasks.length; i++) {
-    if(this.tasks[i].deleted === true) {
-    this.tasks.splice(this.tasks.indexOf(this.tasks[i]),1);
-      }
-    }
-  }
-
   deleteAll(): any {
     for( var i = 0; i < this.tasks.length; i++) {
    if(this.tasks[i].status === true) {
@@ -62,9 +54,6 @@ export class PlannerComponent implements OnInit{
     }
   }
 
-  switchDeleted(): any {
-    this.switchdeleted = !this.switchdeleted;
-  }
 
   switchToday(): any {
     this.switchtoday = !this.switchtoday;

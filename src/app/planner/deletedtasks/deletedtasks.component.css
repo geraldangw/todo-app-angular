@@ -1,0 +1,30 @@
+.jumbotron {
+    width: 80vw;
+    margin: 2% auto;
+    border-radius: 5px;
+    background-color: rgba(20,20,20,0.05);
+}
+
+.taskheader {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+#deleteall {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 3%;
+    font-size: 0.8em;
+}
+
+#deleteall:hover {
+    color: red;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+    background: none;
+    color: white;
+}

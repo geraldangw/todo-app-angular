@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 @Component({
@@ -7,7 +7,7 @@ import { Http, Response } from '@angular/http';
   templateUrl: 'weather.component.html',
   styleUrls: ['weather.component.css'],
 })
-export class WeatherComponent {
+export class WeatherComponent implements OnInit {
     country: string;
     temperature: string;
     maxtemp: string;
@@ -30,6 +30,10 @@ constructor(public http: Http) {
             this.updated = new Date().toDateString();
           });
 
+  }
+
+  ngOnInit() {
+    this.makeRequest();
   }
 
 }

@@ -20,13 +20,13 @@ export class DailygoalComponent {
     this.dailyGoalsChanged.emit(value);
   }
 
-      showDailyGoal(): any {
-      this.showdailygoal = true;
-    }
+  showDailyGoal(): any {
+    this.showdailygoal = true;
+  }
 
-    hideDailyGoal(): any {
-      this.showdailygoal = false;
-    }
+  hideDailyGoal(): any {
+    this.showdailygoal = false;
+  }
 }
 
 

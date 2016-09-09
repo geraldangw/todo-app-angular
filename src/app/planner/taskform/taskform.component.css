@@ -7,9 +7,9 @@ form {
 }
 
 input {
-    background: none;
     border: 1px solid white;
     margin-top: 2%;
+    color: black;
 }
 
 label {

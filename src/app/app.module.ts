@@ -13,12 +13,14 @@ import { DonetasksComponent } from './planner/donetasks/donetasks.component';
 import { DeletedtasksComponent } from './planner/deletedtasks/deletedtasks.component';
 import { TaskformComponent } from './planner/taskform/taskform.component';
 import { TaskComponent } from './planner/task/task.component';
+// import { TaskdetailComponent } from './planner/taskdetail/taskdetail.component';
+// import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DailygoalComponent } from './planner/dailygoal/dailygoal.component';
 import { AboutComponent } from './about/about.component';
 import { WeatherComponent } from './planner/weather/weather.component';
 import { TodaysTasksPipe, PendingTasksPipe, PinnedTasksPipe, DoneTasksPipe, DeletedTasksPipe } from './pipes/status.pipes';
 import { TodaysTasksCountPipe, PendingTasksCountPipe, PinnedTasksCountPipe, DoneTasksCountPipe, DeletedTasksCountPipe } from './pipes/count.pipes';
-import { routing } from './app.routes';
+import { routing, appRoutingProviders  } from './app.routes';
 
 //this takes over from having to put directives in each component. Makes components/providers/etc available across
 @NgModule( {
@@ -38,6 +40,8 @@ import { routing } from './app.routes';
         DonetasksComponent,
         DeletedtasksComponent,
         TaskformComponent,
+        // TaskdetailComponent,
+        // PagenotfoundComponent,
         TodaysTasksPipe, 
         PendingTasksPipe, 
         PinnedTasksPipe, 
@@ -48,7 +52,8 @@ import { routing } from './app.routes';
         PinnedTasksCountPipe, 
         DoneTasksCountPipe, 
         DeletedTasksCountPipe ],
-    providers: [ TasksService ],
+    providers: [ TasksService, 
+                appRoutingProviders ],
     bootstrap: [ AppComponent ]
 })
 

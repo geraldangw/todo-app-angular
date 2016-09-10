@@ -49,6 +49,7 @@ const barrels: string[] = [
   'app/planner/pendingtasks',
   'app/planner/donetasks',
   'app/planner/taskform',
+  'app/planner/taskdetail',
   /** @cli-barrel */
 ];
 

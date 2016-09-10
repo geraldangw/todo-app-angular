@@ -13,8 +13,7 @@ import { DonetasksComponent } from './planner/donetasks/donetasks.component';
 import { DeletedtasksComponent } from './planner/deletedtasks/deletedtasks.component';
 import { TaskformComponent } from './planner/taskform/taskform.component';
 import { TaskComponent } from './planner/task/task.component';
-// import { TaskdetailComponent } from './planner/taskdetail/taskdetail.component';
-// import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { TaskdetailComponent } from './planner/taskdetail/taskdetail.component';
 import { DailygoalComponent } from './planner/dailygoal/dailygoal.component';
 import { AboutComponent } from './about/about.component';
 import { WeatherComponent } from './planner/weather/weather.component';
@@ -40,8 +39,7 @@ import { routing, appRoutingProviders  } from './app.routes';
         DonetasksComponent,
         DeletedtasksComponent,
         TaskformComponent,
-        // TaskdetailComponent,
-        // PagenotfoundComponent,
+        TaskdetailComponent,
         TodaysTasksPipe, 
         PendingTasksPipe, 
         PinnedTasksPipe, 

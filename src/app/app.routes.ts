@@ -2,17 +2,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders }  from '@angular/core';
 import { PlannerComponent } from './planner/planner.component';
 import { DeletedtasksComponent } from './planner/deletedtasks/deletedtasks.component';
+import { TaskdetailComponent } from './planner/taskdetail/taskdetail.component';
 import { AboutComponent} from './about/about.component';
-// import { TaskdetailComponent } from './planner/taskdetail/taskdetail.component';
-// import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { TaskComponent } from './planner/task/task.component';
 
 //setting app paths
 const routes: Routes = [
     {path:'', component: PlannerComponent},
     {path:'about', component: AboutComponent},
     {path: 'archive', component: DeletedtasksComponent},
-    // {path: 'task/:id', component: TaskdetailComponent},
-    // {path: '**', component: PagenotfoundComponent}
+    {path: 'task/:id', component: TaskdetailComponent }
 ];
 
 

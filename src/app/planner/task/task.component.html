@@ -1,6 +1,6 @@
     
    
-    <div class="panel panel-default">
+    <div class="panel panel-default"  (click)="onSelect(task)">
     <!--left-hand side task panel elements-->
     <span id="task"> {{ task.task }} </span>
     <span id="deadline" *ngIf="task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()"> {{ task.deadline.getDate() }}/{{ task.deadline.getMonth() + 1}}</span>

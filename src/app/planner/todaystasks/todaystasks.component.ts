@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { TasksService } from '../planner.service';
 import { Task, TaskComponent } from '../task/task.component';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +17,7 @@ export class TodaystasksComponent implements OnInit {
   switchtoday: boolean = false;
 
   //getting data from Service
-  constructor(@Inject(TasksService) private _TasksService: TasksService) { }
+  constructor(private router: Router, @Inject(TasksService) private _TasksService: TasksService) { }
 
   //drawing the data from seed-tasks via Service
   getTasks(): void {
@@ -28,6 +29,9 @@ export class TodaystasksComponent implements OnInit {
   //getting tasks before load
   ngOnInit(): void {
     this.getTasks();
+  }
+  onSelect(task: Task) {
+    this.router.navigate(['/task', task.id]);
   }
 
   //function to switch state to make collapsible work

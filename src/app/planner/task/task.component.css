@@ -2,8 +2,10 @@
     margin: 1% 3%;
     color: white;
     background: none;
-    padding: 1%;
-    height: 4vh;
+    padding: 1.5%;
+    height: 5vh;
+    font-size: 1.2em;
+    margin-bottom: 2%;
 }
 
 #task {
@@ -18,8 +20,6 @@
 
 #overdue {
     color: #FB3640;
-    font-weight: bold;
-    float: left;
 }
 
 #done {
@@ -32,9 +32,10 @@
     float: right;
     color: white!important;
     margin-right: 2%;
-    border-radius: 80px;
+    border-radius: 3px;
     width: 7vw;
-    width: 4vh;
+    width: 5vh;
+    height: 3vh;
     text-align: center;
 }
 
@@ -53,6 +54,7 @@
 #rest {
     background-color:#F78764;
 }
+
 
 
 

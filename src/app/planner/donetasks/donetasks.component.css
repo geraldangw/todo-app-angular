@@ -15,21 +15,23 @@ p {
 }
 
 a {
-    color: #A9FBC3 !important;
+    border: 1px solid #309550 !important;
+    background: none;
+    border-radius: 5px;
+    width: 20vw;
+    color: white !important;
     display: block;
+    margin: 0 auto;
     margin-bottom: 2%;
+    padding: 2%;
 }
 
 button {
     margin: 0 auto;
     display: block;
     background: none;
-    border: 1px solid white;
+    border: 1px solid red;
     border-radius: 5px;
     margin-bottom: 3%;
-    font-size: 0.8em;
-}
-
-button:hover {
-    color: red;
+    padding: 1%;
 }

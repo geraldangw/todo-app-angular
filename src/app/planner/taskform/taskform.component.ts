@@ -31,10 +31,10 @@ export class TaskformComponent implements OnInit {
   }
 
   //add task into the task data array every time a form is submitted and clear fields
-  addTask(task: HTMLInputElement, assign: HTMLInputElement,deadline: HTMLInputElement, priority: HTMLInputElement): void {
-    this.tasks.push(new Task(this.tasks.length+1, task.value, assign.value, deadline.valueAsDate, false, priority.checked, false));
+  addTask(task: HTMLInputElement, description: HTMLInputElement,deadline: HTMLInputElement, priority: HTMLInputElement): void {
+    this.tasks.push(new Task(this.tasks.length+1, task.value, description.value, deadline.valueAsDate, false, priority.checked, false));
     task.value = '';
-    assign.value = '';
+    description.value = '';
     priority.checked = false;
   }
 

@@ -58,15 +58,15 @@ export class Task {
   public id: number;
   public task: string;
   public status: boolean;
-  public assign: string;
+  public description: string;
   public priority: boolean;
   public deleted: boolean;
   public deadline: Date;
 
-    constructor(id: number, task: string, assign: string, deadline: Date, status?: boolean, priority?:boolean, deleted?:boolean) {
+    constructor(id: number, task: string, description: string, deadline: Date, status?: boolean, priority?:boolean, deleted?:boolean) {
     this.id = id;
     this.task = task;
-    this.assign = assign;
+    this.description = description;
     this.deadline = deadline;
     this.status = status || false;
     this.priority = priority || false;

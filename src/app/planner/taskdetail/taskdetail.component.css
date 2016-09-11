@@ -1,0 +1,109 @@
+.panel {
+    width: 80vw;
+    background-color: rgba(20,20,20,0.05);
+    border: none;
+    margin: 0 auto;
+    margin-top: 6%;
+}
+
+.panel-heading {
+    background-color: rgba(20,20,20,0.2);
+    color:white;
+    padding: 5%;
+    font-size: 1.1em;
+}
+.panel-body {
+    padding: 10%;
+    font-size: 1.1em;
+}
+h2 {
+    margin-top: 5%;
+    margin-bottom: 6%;
+    font-size: 2.5em;
+}
+ h5 {
+     margin-bottom: 5%;
+     font-size: 1.3em;
+ }
+
+p {
+    font-size: 1.1em;
+    padding: 4%;
+}
+
+button {
+    margin-top: 8%;
+    margin-bottom: 5%;
+    background: none;
+    border-radius: 3px;
+    border: 1px solid white;
+    padding: 2% 5%;
+}
+
+#done {
+    border: 2px solid #648767;
+    background: none;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 2%;
+    display: inline-block;
+    font-size: 1em;
+}
+
+#pending {
+    border: 2px solid #ED4D6E;
+    background: none;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 2%;
+    display: inline-block;
+    font-size: 1em;
+}
+
+#pinneditem {
+    border: 2px solid #2274A5;
+    background: none;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}
+#unpinneditem {
+    border: 2px solid grey;
+    background: none;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.deadlinestatus {
+    margin-top: 1%;
+}
+
+#restore {
+    border: 2px solid orange;
+    background: none;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}
+#delete {
+    border: 2px solid red;
+    background: none;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}

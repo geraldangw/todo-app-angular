@@ -3,7 +3,7 @@
 
     <!--rendering the event from dailygoals component and also adding task status-->
     <div class="jumbotron">  <h3> {{dailyGoalsValue}} </h3></div>
-    <p> YOU HAVE {{tasks | todaystaskscount}} TASKS LEFT TODAY...</p>
+    <p> YOU HAVE {{tasks | todaystaskscount}} {{ (tasks | todaystaskscount) < 2 ? "TASK":"TASKS"}} LEFT TODAY...</p>
     <ga-dailygoal (dailyGoalsChanged)="onChange($event)"> </ga-dailygoal>
 
     <ga-taskform> </ga-taskform>

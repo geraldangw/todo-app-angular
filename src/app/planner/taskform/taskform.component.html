@@ -8,7 +8,7 @@
       </div>
 
       <div class="form-group">
-        <input class="form-control" placeholder="Comments?" name="assign" #newassign>
+        <input class="form-control" placeholder="Enter more details here..." name="description" #newdescription>
       </div>
 
       <div class="form-group">
@@ -18,7 +18,7 @@
       <input id="checkbox" class="form-control" type="checkbox" name="priority" #newpriority>  
       <label> pin </label>
 
-      <button type= "button" (click)="addTask(newtask, newassign, newdeadline, newpriority)" class="btn btn-default">
+      <button type= "button" (click)="addTask(newtask, newdescription, newdeadline, newpriority)" class="btn btn-default">
         SUBMIT
       </button>
 

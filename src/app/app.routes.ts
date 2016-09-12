@@ -7,6 +7,7 @@ import { AboutComponent} from './about/about.component';
 import { TaskComponent } from './planner/task/task.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { UserdetailComponent } from './user/userdetail/userdetail.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 //setting app paths
@@ -16,7 +17,8 @@ const routes: Routes = [
     {path: 'user', component: UserComponent, canActivate: [AuthGuard]},
     {path:'about', component: AboutComponent, canActivate: [AuthGuard]},
     {path: 'archive', component: DeletedtasksComponent, canActivate: [AuthGuard]},
-    {path: 'task/:id', component: TaskdetailComponent, canActivate: [AuthGuard] }
+    {path: 'task/:id', component: TaskdetailComponent, canActivate: [AuthGuard] },
+    {path: 'user/:id', component: UserdetailComponent, canActivate: [AuthGuard] }
 ];
 
 

@@ -21,6 +21,7 @@ import { WeatherComponent } from './planner/weather/weather.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserComponent } from  './user/user.component';
 import { UserService } from './user/user.service';
+import { UserdetailComponent } from './user/userdetail/userdetail.component';
 import { AuthenticationService } from './user/authentication.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup/signup.component';
@@ -55,6 +56,7 @@ import { routing, appRoutingProviders  } from './app.routes';
         UserComponent,
         LoginComponent,
         SignupComponent,
+        UserdetailComponent,
         TodaysTasksPipe, 
         PendingTasksPipe, 
         PinnedTasksPipe, 

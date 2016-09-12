@@ -1,0 +1,7 @@
+<div *ngIf="user">
+<p>  ID: {{ user._id}} </p>
+<p>  Name: {{ user.first_name }} {{ user.last_name}}</p>
+<p>  Email: {{ user.email }} </p>
+<button type="button" (click)="delete(user._id)"> DELETE </button>
+</div>
+

@@ -12,10 +12,9 @@ export class UserService {
     private headers: Headers;
 
     constructor(private http: Http, private authenticationService: AuthenticationService) {
-        this.headers = new Headers();
+        this.headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
-        this.headers.append('Authorization', 'Bearer ' + this.authenticationService.token);
     }
 
 
@@ -26,7 +25,9 @@ export class UserService {
     }
 
     public GetSingle = (id: string): Observable<User> => {
-        return this.http.get('http://localhost:8000/api/users/' + id)
+        let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
+        let options = new RequestOptions({ headers: headers });
+        return this.http.get('http://localhost:8000/api/users/' + id, options)
                 .map((response: Response) => <User>response.json())
                 .catch(this.handleError);
     }
@@ -45,13 +46,15 @@ export class UserService {
                 .catch(this.handleError);
     } 
 
-    public Delete = (id: number): Observable<Response> => {
-        return this.http.delete('http://localhost:8000/api/users/' + id)
+    public Delete = (id: string): Observable<Response> => {
+        let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
+        let options = new RequestOptions({ headers: headers });
+        return this.http.delete('http://localhost:8000/api/users/' + id, options)
                 .catch(this.handleError);
     }
 
     private handleError(error: Response) {
-        console.error(error);
+        console.error("This is" + error);
         return Observable.throw(error.json().error || 'Server Error');
     }
 

@@ -5,7 +5,7 @@
 <div>
 Current Users
 <ul>
-<li *ngFor="let user of users"> {{ user.first_name }} </li>
+<li (click)=OnSelect(user) *ngFor="let user of users"> {{ user.first_name }} <span (click)="delete(user._id)"> DELETE </span> </li>
 </ul>
 </div>
 

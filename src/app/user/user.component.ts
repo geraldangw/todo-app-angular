@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -10,7 +11,7 @@ import { UserService } from './user.service';
 export class UserComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private _userService: UserService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private _userService: UserService) { }
 
   ngOnInit() {
     //get users from secure api end point.
@@ -19,11 +20,31 @@ export class UserComponent implements OnInit {
           this.users = users;
         })
   }
+
+  OnSelect(user: User) {
+    this.router.navigate(['/user', user._id]);
+
+  }
+
+  delete(id: string) {
+    this._userService.Delete(id).subscribe(
+         data => {
+           // refresh the list
+           console.log("works!");
+           this.router.navigate(['/user']);
+           return true;
+         },
+         error => {
+           console.log("This is the " + error);
+         }
+      );
+    };  
+
 }
 
 export class User {
 
-  public id: String;
+  public _id: String;
   public first_name: String;
   public last_name: String;
   public email: String;

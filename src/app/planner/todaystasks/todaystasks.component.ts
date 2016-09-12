@@ -30,9 +30,6 @@ export class TodaystasksComponent implements OnInit {
   ngOnInit(): void {
     this.getTasks();
   }
-  onSelect(task: Task) {
-    this.router.navigate(['/task', task.id]);
-  }
 
   //function to switch state to make collapsible work
   switchToday(): any {

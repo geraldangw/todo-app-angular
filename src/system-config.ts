@@ -50,6 +50,8 @@ const barrels: string[] = [
   'app/planner/donetasks',
   'app/planner/taskform',
   'app/planner/taskdetail',
+  'app/user',
+  'app/login',
   /** @cli-barrel */
 ];
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { TasksService } from './planner/planner.service';
 import { AppComponent } from './app.component';
@@ -17,13 +18,22 @@ import { TaskdetailComponent } from './planner/taskdetail/taskdetail.component';
 import { DailygoalComponent } from './planner/dailygoal/dailygoal.component';
 import { AboutComponent } from './about/about.component';
 import { WeatherComponent } from './planner/weather/weather.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { UserComponent } from  './user/user.component';
+import { UserService } from './user/user.service';
+import { AuthenticationService } from './user/authentication.service';
+import { LoginComponent } from './login/login.component';
 import { TodaysTasksPipe, PendingTasksPipe, PinnedTasksPipe, DoneTasksPipe, DeletedTasksPipe } from './pipes/status.pipes';
 import { TodaysTasksCountPipe, PendingTasksCountPipe, PinnedTasksCountPipe, DoneTasksCountPipe, DeletedTasksCountPipe } from './pipes/count.pipes';
 import { routing, appRoutingProviders  } from './app.routes';
 
 //this takes over from having to put directives in each component. Makes components/providers/etc available across
 @NgModule( {
-    imports: [BrowserModule, routing, HttpModule],
+    imports: [
+        BrowserModule, 
+        FormsModule,
+        routing, 
+        HttpModule],
     declarations: [
         AppComponent, 
         NavbarComponent, 
@@ -40,6 +50,8 @@ import { routing, appRoutingProviders  } from './app.routes';
         DeletedtasksComponent,
         TaskformComponent,
         TaskdetailComponent,
+        UserComponent,
+        LoginComponent,
         TodaysTasksPipe, 
         PendingTasksPipe, 
         PinnedTasksPipe, 
@@ -50,8 +62,12 @@ import { routing, appRoutingProviders  } from './app.routes';
         PinnedTasksCountPipe, 
         DoneTasksCountPipe, 
         DeletedTasksCountPipe ],
-    providers: [ TasksService, 
-                appRoutingProviders ],
+    providers: [ 
+        TasksService, 
+        appRoutingProviders,
+        AuthGuard,
+        AuthenticationService,
+        UserService ],
     bootstrap: [ AppComponent ]
 })
 

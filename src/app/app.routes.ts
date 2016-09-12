@@ -5,13 +5,18 @@ import { DeletedtasksComponent } from './planner/deletedtasks/deletedtasks.compo
 import { TaskdetailComponent } from './planner/taskdetail/taskdetail.component';
 import { AboutComponent} from './about/about.component';
 import { TaskComponent } from './planner/task/task.component';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 //setting app paths
 const routes: Routes = [
-    {path:'', component: PlannerComponent},
-    {path:'about', component: AboutComponent},
-    {path: 'archive', component: DeletedtasksComponent},
-    {path: 'task/:id', component: TaskdetailComponent }
+    {path: "login", component: LoginComponent },
+    {path: '', component: PlannerComponent, canActivate: [AuthGuard]},
+    {path: 'user', component: UserComponent, canActivate: [AuthGuard]},
+    {path:'about', component: AboutComponent, canActivate: [AuthGuard]},
+    {path: 'archive', component: DeletedtasksComponent, canActivate: [AuthGuard]},
+    {path: 'task/:id', component: TaskdetailComponent, canActivate: [AuthGuard] }
 ];
 
 

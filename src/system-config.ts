@@ -52,6 +52,7 @@ const barrels: string[] = [
   'app/planner/taskdetail',
   'app/user',
   'app/login',
+  'app/login/signup',
   /** @cli-barrel */
 ];
 

@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     //get users from secure api end point.
-    this._userService.getUsers()
+    this._userService.GetAll()
         .subscribe(users => {
           this.users = users;
         })
@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
 
 export class User {
 
-  public _id: String;
+  public id: String;
   public first_name: String;
   public last_name: String;
   public email: String;

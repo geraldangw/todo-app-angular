@@ -23,6 +23,8 @@ import { UserComponent } from  './user/user.component';
 import { UserService } from './user/user.service';
 import { AuthenticationService } from './user/authentication.service';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './login/signup/signup.component';
+import { SignupService } from './login/signup/signup.service';
 import { TodaysTasksPipe, PendingTasksPipe, PinnedTasksPipe, DoneTasksPipe, DeletedTasksPipe } from './pipes/status.pipes';
 import { TodaysTasksCountPipe, PendingTasksCountPipe, PinnedTasksCountPipe, DoneTasksCountPipe, DeletedTasksCountPipe } from './pipes/count.pipes';
 import { routing, appRoutingProviders  } from './app.routes';
@@ -52,6 +54,7 @@ import { routing, appRoutingProviders  } from './app.routes';
         TaskdetailComponent,
         UserComponent,
         LoginComponent,
+        SignupComponent,
         TodaysTasksPipe, 
         PendingTasksPipe, 
         PinnedTasksPipe, 
@@ -67,7 +70,8 @@ import { routing, appRoutingProviders  } from './app.routes';
         appRoutingProviders,
         AuthGuard,
         AuthenticationService,
-        UserService ],
+        UserService,
+        SignupService ],
     bootstrap: [ AppComponent ]
 })
 

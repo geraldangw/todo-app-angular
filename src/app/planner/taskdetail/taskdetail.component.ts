@@ -15,6 +15,7 @@ import { TasksService } from '../planner.service';
 export class TaskdetailComponent implements OnInit {
 task: Task;
 date: Date;
+deadline: Date;
 private sub: Subscription;
 
 constructor(private router: Router, private route: ActivatedRoute, private _TasksService: TasksService) { 
@@ -22,8 +23,8 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
 }
 
   ngOnInit() {
-      let id = +this.route.snapshot.params['id'];
-      this._TasksService.getTask(id).then(task => this.task = task);
+      let id = this.route.snapshot.params['id'];
+      this._TasksService.getTask(id).subscribe(task => this.task = task);
      };
 
     goBack() { this.router.navigate(['/']); }

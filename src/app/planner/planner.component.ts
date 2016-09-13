@@ -16,6 +16,7 @@ import { DailygoalComponent } from './dailygoal/dailygoal.component';
 export class PlannerComponent implements OnInit{
   
   tasks: Task[];
+  usertasks: Task[];
  
  //set property for event output from dailygoals component with a default value of "Helloz!"
   dailyGoalsValue: string = "Helloz!";
@@ -26,7 +27,7 @@ export class PlannerComponent implements OnInit{
   }
 
 //function get the required data from seed-tasks via TasksService
-  getTasks(): void {
+   getTasks(): void {
     this._TasksService.getUserTasks().subscribe(tasks => {
     this.tasks = tasks;
     })

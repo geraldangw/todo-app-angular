@@ -49,19 +49,6 @@ export class UserService {
         return Observable.throw(error.json().error || 'Server Error');
     }
 
-    // getUsers(): Observable<User[]> {
-    //     //add authorization header with jwt token
-    //     let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
-    //     let options = new RequestOptions({ headers: headers });
-
-    //     //get users from api
-    //     return this.http.get('http://localhost:8000/api/users', options)
-    //             .map((response: Response) => response.json());
-    // }
-
-    
-
-
 
   
     

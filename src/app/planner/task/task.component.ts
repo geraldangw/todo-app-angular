@@ -21,7 +21,7 @@ export class TaskComponent{
   }
 
    onSelect(task: Task) {
-    this.router.navigate(['/task', task.id]);
+    this.router.navigate(['/task', task._id]);
   }
 
   done(): boolean {
@@ -55,22 +55,25 @@ export class TaskComponent{
 }
 
 export class Task {
-  public id: number;
+  public _id: string;
   public task: string;
   public status: boolean;
   public description: string;
   public priority: boolean;
   public deleted: boolean;
   public deadline: Date;
+  public user: String;
 
-    constructor(id: number, task: string, description: string, deadline: Date, status?: boolean, priority?:boolean, deleted?:boolean) {
-    this.id = id;
+    constructor(_id: string, task: string, description: string, deadline: Date, user: string, status?: boolean, priority?:boolean, deleted?:boolean) {
+    this._id = _id;
     this.task = task;
     this.description = description;
     this.deadline = deadline;
+    this.user = user;
     this.status = status || false;
     this.priority = priority || false;
     this.deleted = deleted || false;
+    
   }
 
     done(): void {

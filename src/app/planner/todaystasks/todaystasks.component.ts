@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class TodaystasksComponent implements OnInit {
   //initializing tasks as Task array from Service
   tasks: Task[]; 
+  usertasks: Task[];
 
   //state declaration for collapsible view
   switchtoday: boolean = false;
@@ -23,6 +24,7 @@ export class TodaystasksComponent implements OnInit {
   getTasks(): void {
     this._TasksService.getUserTasks().subscribe(tasks => {
     this.tasks = tasks;
+    console.log(this.tasks);
     })
   }
 

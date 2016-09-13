@@ -11,7 +11,7 @@ export class TodaysTasksCountPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.deadline.getDate() === date.getDate() && task.deadline.getMonth() === date.getMonth() && task.status === false && task.deleted === false).length;
+    return tasks.filter((task: any) => new Date(task.deadline).getDate() === date.getDate() && new Date(task.deadline).getMonth() === date.getMonth() && task.status === false && task.deleted === false).length;
   }
 }
 
@@ -26,7 +26,7 @@ export class PinnedTasksCountPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.priority === true && task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()).length;
+    return tasks.filter((task: any) => task.priority === true && task.status === false && task.deleted === false).length;
   }
 }
 
@@ -41,7 +41,7 @@ export class PendingTasksCountPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()).length;
+    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false).length;
   }
 }
 

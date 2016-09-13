@@ -2,14 +2,13 @@
    
     <div class="panel panel-default"  (click)="onSelect(task)">
     <!--left-hand side task panel elements-->
-    <span id="task"> {{ task.task }} <span id="overdue" *ngIf="task.deadline.getDate() < date.getDate() && task.deadline.getMonth() === date.getMonth() && task.status === false && task.deleted === false "> ! </span></span>
-    <!--<span id="deadline" *ngIf="task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()"> {{ task.deadline | date: "MMM d" }}th</span>-->
+    <span id="task"> {{ task.task }} <!-- <span id="overdue" *ngIf="Date(task.deadline).getDate() < date.getDate() && Date(task.deadline).getMonth() === date.getMonth() && task.status === false && task.deleted === false "> ! </span> --></span>
     <span id="done" *ngIf="task.status === true"> : ) </span>
     
     <!--right-hand side task panel elements-->
     <a id="del" *ngIf="task.deleted === false" href (click)="delete()"> DEL</a>
     <a id="clr" *ngIf="task.status === false && task.deleted === false" href (click)="done()"> CLR </a>
-    <a  id="pin" *ngIf="task.priority === false && task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()"href (click)="prioritize()">PIN</a>
+    <!--<a  id="pin" *ngIf="task.priority === false && task.status === false && task.deleted === false && Date(task.deadline).getDate() !== date.getDate() || Date(task.deadline).getMonth() !== date.getMonth()"href (click)="prioritize()">PIN</a>-->
     <a id="rest" *ngIf="task.deleted === true" href (click)="restore()"> rest </a>
     </div>
     

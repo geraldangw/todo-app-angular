@@ -12,7 +12,7 @@ export class TodaysTasksPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.deadline.getDate() === date.getDate() && task.deadline.getMonth() === date.getMonth() && task.status === false && task.deleted === false).sort((a, b) => a.deadline.getTime() - b.deadline.getTime());
+    return tasks.filter((task: any) => new Date(task.deadline).getDate() === date.getDate() && new Date(task.deadline).getMonth() === date.getMonth() && task.status === false && task.deleted === false);
   }
 }
 
@@ -27,7 +27,7 @@ export class PinnedTasksPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.priority === true && task.status === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()).sort((a, b) => a.deadline.getTime() - b.deadline.getTime());
+    return tasks.filter((task: any) => task.priority === true && task.status === false && task.deleted === false);
   }
 }
 
@@ -43,8 +43,8 @@ export class PendingTasksPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false && task.deadline.getDate() !== date.getDate() || task.deadline.getMonth() !== date.getMonth()).sort((a, b) => a.deadline.getTime() - b.deadline.getTime());
-  }
+    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false);
+    }
 }
 
 //pipe to filter done tasks thats are not deleted
@@ -58,7 +58,7 @@ export class DoneTasksPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.status === true && task.deleted === false).sort((a, b) => a.deadline.getTime() - b.deadline.getTime());
+    return tasks.filter((task: any) => task.status === true && task.deleted === false);
   }
 }
 
@@ -74,6 +74,6 @@ export class DeletedTasksPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.deleted === true).sort((a, b) => a.deadline.getTime() - b.deadline.getTime());
+    return tasks.filter((task: any) => task.deleted === true);
   }
 }

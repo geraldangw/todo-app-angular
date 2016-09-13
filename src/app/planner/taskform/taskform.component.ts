@@ -10,13 +10,20 @@ import { Task, TaskComponent } from '../task/task.component';
 })
 export class TaskformComponent implements OnInit {
   //initializing tasks as Task array from Service
-  tasks: Task[]; 
+  tasks: Task[];
+  model: any = {}
+  loading = false;
+  error = '';
+  success: boolean = false;
+  currentUser: string;
 
   //state declaration for collapsible view
   switchtaskform: boolean = false;
 
   //getting data from Service
-  constructor(@Inject(TasksService) private _TasksService: TasksService) { }
+  constructor(@Inject(TasksService) private _TasksService: TasksService) { 
+    this.currentUser = localStorage.getItem('userId');
+  }
 
   //drawing the data from seed-tasks via Service
   getTasks(): void {
@@ -31,11 +38,18 @@ export class TaskformComponent implements OnInit {
   }
 
   //add task into the task data array every time a form is submitted and clear fields
-  addTask(task: HTMLInputElement, description: HTMLInputElement,deadline: HTMLInputElement, priority: HTMLInputElement): void {
-    this.tasks.push(new Task(this.tasks.length+1, task.value, description.value, deadline.valueAsDate, false, priority.checked, false));
-    task.value = '';
-    description.value = '';
-    priority.checked = false;
+  addTask() {
+    this.loading = true;
+    this._TasksService.addTask(this.model.task, this.model.description, this.model.deadline, this.model.priority, this.currentUser)
+    .subscribe( result => {
+      //add task successful
+      if(result === true) {
+      } else {
+        this.error = 'add task failed!';
+        this.loading = false;
+        console.log(this.error);
+      }
+    })
   }
 
   //function to switch state to make collapsible work

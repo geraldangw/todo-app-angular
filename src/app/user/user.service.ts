@@ -12,9 +12,6 @@ export class UserService {
     private headers: Headers;
 
     constructor(private http: Http, private authenticationService: AuthenticationService) {
-        this.headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Accept', 'application/json');
     }
 
 
@@ -32,16 +29,10 @@ export class UserService {
                 .catch(this.handleError);
     }
 
-    public Add = (first_name: string, last_name: string, email: string, password: string): Observable<User> => {
-        let toAdd = JSON.stringify({ first_name: first_name, last_name: last_name, email: email, password: password });
-
-        return this.http.post('http://localhost:8000/api/users', toAdd, { headers: this.headers })
-                .map((response: Response) => <User>response.json())
-                .catch(this.handleError);
-    }
-
     public Update = (id: string, itemToUpdate: User): Observable<User> => {
-        return this.http.put('http://localhost:8000/api/users/' + id, itemToUpdate, { headers: this.headers })
+        let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
+        let options = new RequestOptions({ headers: headers });
+        return this.http.put('http://localhost:8000/api/users/' + id, itemToUpdate, options)
                 .map((response: Response) => <User>response.json())
                 .catch(this.handleError);
     } 

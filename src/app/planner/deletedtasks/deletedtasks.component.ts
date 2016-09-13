@@ -13,11 +13,12 @@ export class DeletedtasksComponent implements OnInit {
   tasks: Task[]; 
 
   //getting data from Service
-  constructor(@Inject(TasksService) private _TasksService: TasksService) { }
+  constructor(@Inject(TasksService) private _TasksService: TasksService) { 
+  }
 
   //drawing the data from seed-tasks via Service
   getTasks(): void {
-    this._TasksService.getSeedTasks().then(tasks => {
+    this._TasksService.getUserTasks().subscribe(tasks => {
     this.tasks = tasks;
     })
   }

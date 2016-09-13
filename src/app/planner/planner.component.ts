@@ -21,11 +21,13 @@ export class PlannerComponent implements OnInit{
   dailyGoalsValue: string = "Helloz!";
   
 //injecting service to make data available
-  constructor(@Inject(TasksService) private _TasksService: TasksService) { }
+  constructor(@Inject(TasksService) private _TasksService: TasksService) { 
+
+  }
 
 //function get the required data from seed-tasks via TasksService
   getTasks(): void {
-    this._TasksService.getSeedTasks().then(tasks => {
+    this._TasksService.getUserTasks().subscribe(tasks => {
     this.tasks = tasks;
     })
   }

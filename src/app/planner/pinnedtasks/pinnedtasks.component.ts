@@ -20,7 +20,7 @@ export class PinnedtasksComponent implements OnInit {
 
   //drawing the data from seed-tasks via Service
   getTasks(): void {
-    this._TasksService.getSeedTasks().then(tasks => {
+    this._TasksService.getUserTasks().subscribe(tasks => {
     this.tasks = tasks;
     })
   }

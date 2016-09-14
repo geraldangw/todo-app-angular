@@ -8,7 +8,7 @@
     <!--right-hand side task panel elements-->
     <a id="del" *ngIf="task.deleted === false" href (click)="delete()"> DEL</a>
     <a id="clr" *ngIf="task.status === false && task.deleted === false" href (click)="done()"> CLR </a>
-    <!--<a  id="pin" *ngIf="task.priority === false && task.status === false && task.deleted === false && Date(task.deadline).getDate() !== date.getDate() || Date(task.deadline).getMonth() !== date.getMonth()"href (click)="prioritize()">PIN</a>-->
+    <a  id="pin" *ngIf="task.priority === false && task.status === false && task.deleted === false" href (click)="prioritize()">PIN</a>
     <a id="rest" *ngIf="task.deleted === true" href (click)="restore()"> rest </a>
     </div>
     

@@ -16,13 +16,14 @@ export class TaskformComponent implements OnInit {
   error = '';
   success: boolean = false;
   currentUser: string;
+  id: string;
 
   //state declaration for collapsible view
   switchtaskform: boolean = false;
 
   //getting data from Service
   constructor(@Inject(TasksService) private _TasksService: TasksService) { 
-    this.currentUser = localStorage.getItem('userId');
+    this.currentUser = JSON.parse(localStorage.getItem('userId')).id;
   }
 
   //drawing the data from seed-tasks via Service
@@ -44,6 +45,7 @@ export class TaskformComponent implements OnInit {
     .subscribe( result => {
       //add task successful
       if(result === true) {
+        this.loading = false;
       } else {
         this.error = 'add task failed!';
         this.loading = false;

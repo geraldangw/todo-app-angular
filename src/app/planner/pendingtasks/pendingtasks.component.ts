@@ -20,15 +20,9 @@ export class PendingtasksComponent implements OnInit {
   constructor(@Inject(TasksService) private _TasksService: TasksService) { }
 
   //drawing the data from seed-tasks via Service
-   getTasks(): void {
+ getTasks(): void {
     this._TasksService.getUserTasks().subscribe(tasks => {
     this.tasks = tasks;
-    for(let i = 0; i < this.tasks.length; i++) {
-      if(this.tasks[i].user[0] === localStorage.getItem('userId')) {
-        this.usertasks.push(this.tasks[i]);
-      }
-    }
-    console.log(this.tasks[0]);
     })
   }
 

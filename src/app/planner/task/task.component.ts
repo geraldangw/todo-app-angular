@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -16,7 +16,7 @@ export class TaskComponent{
   task: Task;
   date: Date;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(@Inject(TasksService) private _TasksService: TasksService, private router: Router, private route: ActivatedRoute) {
   this.date = new Date;
   }
 
@@ -24,23 +24,55 @@ export class TaskComponent{
     this.router.navigate(['/task', task._id]);
   }
 
-  done(): boolean {
-  this.task.done();
+  done(): any {
+    this._TasksService.Done(this.task._id)
+    .subscribe(task => {
+      if(task) {
+        console.log(task);
+        console.log("task updated");
+      } else {
+        console.log("task update failed");
+      }
+    })
     return false;
   }
 
-  prioritize(): boolean {
-    this.task.prioritize();
+  prioritize(): any {
+    this._TasksService.Pinned(this.task._id)
+    .subscribe(task => {
+      if(task) {
+        console.log(task);
+        console.log("task updated");
+      } else {
+        console.log("task update failed");
+      }
+    })
     return false;
   }
 
-  delete(): boolean {
-    this.task.delete();
+  delete(): any {
+    this._TasksService.TempDelete(this.task._id)
+    .subscribe(task => {
+      if(task) {
+        console.log(task);
+        console.log("task updated");
+      } else {
+        console.log("task update failed");
+      }
+    })
     return false;
   }
 
-  restore(): boolean {
-    this.task.restore();
+  restore(): any {
+    this._TasksService.Restore(this.task._id)
+    .subscribe(task => {
+      if(task) {
+        console.log(task);
+        console.log("task updated");
+      } else {
+        console.log("task update failed");
+      }
+    })
     return false;
   }
 
@@ -74,22 +106,6 @@ export class Task {
     this.priority = priority || false;
     this.deleted = deleted || false;
     
-  }
-
-    done(): void {
-    this.status = true;
-  }
-
-    prioritize(): void {
-    this.priority = true;
-  }
-
-   delete(): void {
-    this.deleted = true;
-  }
-
-   restore(): void {
-    this.deleted = false;
   }
   
 }

@@ -27,7 +27,7 @@ export class PinnedTasksPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.priority === true && task.status === false && task.deleted === false);
+    return tasks.filter((task: any) => task.priority === true && task.status === false && task.deleted === false && new Date(task.deadline).getDate() !== date.getDate());
   }
 }
 
@@ -43,7 +43,7 @@ export class PendingTasksPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false);
+    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false && new Date(task.deadline).getDate() !== date.getDate());
     }
 }
 

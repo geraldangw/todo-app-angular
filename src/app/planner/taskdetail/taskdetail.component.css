@@ -41,8 +41,7 @@ button {
 }
 
 #done {
-    border: 2px solid #648767;
-    background: none;
+    background-color: #648767;
     padding: 3%;
     border-radius: 5px;
     width: 25vw;
@@ -52,8 +51,7 @@ button {
 }
 
 #pending {
-    border: 2px solid #ED4D6E;
-    background: none;
+    background-color: #ED4D6E;
     padding: 3%;
     border-radius: 5px;
     width: 25vw;
@@ -63,8 +61,7 @@ button {
 }
 
 #pinneditem {
-    border: 2px solid #2274A5;
-    background: none;
+    background-color: #2274A5;
     padding: 3%;
     border-radius: 5px;
     width: 25vw;
@@ -73,8 +70,7 @@ button {
     font-size: 1em;
 }
 #unpinneditem {
-    border: 2px solid grey;
-    background: none;
+    background-color: grey;
     padding: 3%;
     border-radius: 5px;
     width: 25vw;
@@ -88,8 +84,7 @@ button {
 }
 
 #restore {
-    border: 2px solid orange;
-    background: none;
+    background-color: orange;
     padding: 3%;
     border-radius: 5px;
     width: 25vw;
@@ -98,12 +93,15 @@ button {
     font-size: 1em;
 }
 #delete {
-    border: 2px solid red;
-    background: none;
+    background-color: red;
     padding: 3%;
     border-radius: 5px;
     width: 25vw;
     margin: 0 auto;
     display: inline-block;
     font-size: 1em;
+}
+
+#done:hover, #pending:hover, #pinneditem:hover, #unpinneditem:hover, #restore:hover, #delete:hover {
+    border: 1px solid white;
 }

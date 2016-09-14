@@ -63,11 +63,33 @@ public Done = (id: string): Observable<Task> => {
         .catch(this.handleError);
 }
 
+public unDone = (id: string): Observable<Task> => {
+  let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
+  let options = new RequestOptions({ headers: headers });
+  let updateItem = {
+    "status": false
+          }
+  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+        .map((response: Response) => <Task>response.json())
+        .catch(this.handleError);
+}
+
 public Pinned = (id: string): Observable<Task> => {
   let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
   let options = new RequestOptions({ headers: headers });
   let updateItem = {
     "priority": true
+          }
+  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+        .map((response: Response) => <Task>response.json())
+        .catch(this.handleError);
+}
+
+public unPin = (id: string): Observable<Task> => {
+  let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
+  let options = new RequestOptions({ headers: headers });
+  let updateItem = {
+    "priority": false
           }
   return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
         .map((response: Response) => <Task>response.json())

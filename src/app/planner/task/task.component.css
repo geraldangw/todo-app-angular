@@ -28,7 +28,7 @@
     color: #86A989;
 }
 
-#pin, #clr, #del, #rest {
+#pin, #clr, #del, #rest, #delete {
     float: right;
     color: white!important;
     margin-right: 2%;
@@ -53,6 +53,9 @@
 
 #rest {
     background-color:#F78764;
+}
+#delete {
+    background-color:red;
 }
 
 

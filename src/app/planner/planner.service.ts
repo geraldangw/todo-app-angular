@@ -120,9 +120,9 @@ public Restore = (id: string): Observable<Task> => {
 
 
 public Delete = (id: string): Observable<Response> => {
-  let headers = new Headers({'Authorization': 'Bearer' + this.authenticationService.token});
+  let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
   let options = new RequestOptions({ headers: headers });
-  return this.http.delete('http://localhost:8000/api/tasks' + id, options)
+  return this.http.delete('http://localhost:8000/api/tasks/' + id, options)
         .catch(this.handleError);
 }
 

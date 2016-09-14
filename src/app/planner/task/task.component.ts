@@ -76,6 +76,20 @@ export class TaskComponent{
     return false;
   }
 
+  clearforever(): any {
+    this._TasksService.Delete(this.task._id)
+    .subscribe(  data => {
+           // refresh the list
+           console.log("works!");
+         },
+         error => {
+           console.log("This is the " + error);
+         }
+      );
+      return false;
+    }; 
+  
+
   dailyGoalsChanged = new EventEmitter();
 
   onChange(value: string) {

@@ -10,5 +10,6 @@
     <a id="clr" *ngIf="task.status === false && task.deleted === false" href (click)="done()"> CLR </a>
     <a  id="pin" *ngIf="task.priority === false && task.status === false && task.deleted === false && (task.deadline | date) !== (date | date)" href (click)="prioritize()">PIN</a>
     <a id="rest" *ngIf="task.deleted === true" href (click)="restore()"> rest </a>
+    <a id="delete" *ngIf="task.deleted === true" href (click)="clearforever()"> CLR </a>
  
     </div>

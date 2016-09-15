@@ -6,9 +6,10 @@ import { Task, TaskComponent } from '../task/task.component';
   moduleId: module.id,
   selector: 'ga-taskform',
   templateUrl: 'taskform.component.html',
-  styleUrls: ['taskform.component.css']
+  styleUrls: ['taskform.component.css'],
+  inputs: ["tasks"]
 })
-export class TaskformComponent implements OnInit {
+export class TaskformComponent {
   //initializing tasks as Task array from Service
   tasks: Task[];
   model: any = {}
@@ -26,17 +27,17 @@ export class TaskformComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('userId')).id;
   }
 
-  //drawing the data from seed-tasks via Service
-  getTasks(): void {
-    this._TasksService.getUserTasks().subscribe(tasks => {
-    this.tasks = tasks;
-    })
-  }
+  // //drawing the data from seed-tasks via Service
+  // getTasks(): void {
+  //   this._TasksService.getUserTasks().subscribe(tasks => {
+  //   this.tasks = tasks;
+  //   })
+  // }
 
-  //getting tasks before load
-  ngOnInit(): void {
-    this.getTasks();
-  }
+  // //getting tasks before load
+  // ngOnInit(): void {
+  //   this.getTasks();
+  // }
 
   //add task into the task data array every time a form is submitted and clear fields
   addTask() {

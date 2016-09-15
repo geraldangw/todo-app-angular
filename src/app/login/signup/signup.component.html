@@ -1,3 +1,7 @@
+<button class="btn btn-primary" *ngIf="newsignup === false" (click)="newsign()"> Sign Up Here </button>
+
+<div *ngIf="newsignup === true">
+
 <div *ngIf="signed === false">
 
 <div class="jumbotron">
@@ -34,7 +38,8 @@
 </form>
 
 </div>
+</div>
 
 </div>
 
-<div *ngIf="signed=== true"> <h3> SIGN UP SUCCESSFUL! LOG IN NOW! </h3> </div>
+<div *ngIf="signed=== true"> <h5> SIGN UP SUCCESSFUL! LOG IN NOW! </h5> </div>

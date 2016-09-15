@@ -6,9 +6,10 @@ import { Task, TaskComponent } from '../task/task.component';
   moduleId: module.id,
   selector: 'ga-donetasks',
   templateUrl: 'donetasks.component.html',
-  styleUrls: ['donetasks.component.css']
+  styleUrls: ['donetasks.component.css'],
+  inputs: ["tasks"]
 })
-export class DonetasksComponent implements OnInit {
+export class DonetasksComponent {
   //initializing tasks as Task array from Service
   tasks: Task[]; 
 
@@ -19,16 +20,16 @@ export class DonetasksComponent implements OnInit {
   constructor(@Inject(TasksService) private _TasksService: TasksService) { }
 
   //drawing the data from seed-tasks via Service
-  getTasks(): void {
-    this._TasksService.getUserTasks().subscribe(tasks => {
-    this.tasks = tasks;
-    })
-  }
+  // getTasks(): void {
+  //   this._TasksService.getUserTasks().subscribe(tasks => {
+  //   this.tasks = tasks;
+  //   })
+  // }
 
-  //getting tasks before load
-  ngOnInit(): void {
-    this.getTasks();
-  }
+  // //getting tasks before load
+  // ngOnInit(): void {
+  //   this.getTasks();
+  // }
 
   //function to switch state to make collapsible work
   switchDone(): any {

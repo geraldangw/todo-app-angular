@@ -23,3 +23,63 @@ a {
     margin-bottom: 2%;
     padding: 2%;
 }
+
+.panel {
+    margin: 1% 3%;
+    color: white;
+    background: none;
+    padding: 1.5%;
+    height: 5vh;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+}
+
+#task {
+    float: left;
+}
+
+#deadline {
+    color: orange;
+    margin-left: 2%;
+    float: left;
+}
+
+#overdue {
+    color: #FB3640;
+}
+
+#done {
+    float: left;
+    margin-left: 2%;
+    color: #86A989;
+}
+
+#pin, #clr, #del, #rest, #delete {
+    float: right;
+    color: white!important;
+    margin-right: 2%;
+    border-radius: 3px;
+    width: 7vw;
+    width: 5vh;
+    height: 3vh;
+    text-align: center;
+}
+
+#pin {
+    background-color:#2274A5;
+}
+
+#clr {
+    background-color:#648767;
+}
+
+#del {
+    background-color:#ED4D6E;
+}
+
+#rest {
+    background-color:#F78764;
+}
+#delete {
+    background-color:red;
+}

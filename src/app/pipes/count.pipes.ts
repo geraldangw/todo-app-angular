@@ -41,7 +41,7 @@ export class PendingTasksCountPipe implements PipeTransform {
     if (tasks == null) {
       return null;
     }
-    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false).length;
+    return tasks.filter((task: any) => task.status === false && task.priority === false && task.deleted === false && new Date(task.deadline).getDate() !== date.getDate()).length;
   }
 }
 

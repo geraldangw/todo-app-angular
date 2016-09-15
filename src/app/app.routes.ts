@@ -16,7 +16,7 @@ const routes: Routes = [
     {path: '', component: PlannerComponent, canActivate: [AuthGuard]},
     {path: 'user', component: UserComponent, canActivate: [AuthGuard]},
     {path:'about', component: AboutComponent, canActivate: [AuthGuard]},
-    {path: 'archive', component: DeletedtasksComponent, canActivate: [AuthGuard]},
+    // {path: 'archive', component: DeletedtasksComponent, canActivate: [AuthGuard]},
     {path: 'task/:id', component: TaskdetailComponent, canActivate: [AuthGuard] },
     {path: 'user/:id', component: UserdetailComponent, canActivate: [AuthGuard] }
 ];

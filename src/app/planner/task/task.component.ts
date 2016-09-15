@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import{ PlannerComponent } from '../planner.component';
 
 import { TasksService } from '../planner.service';
 
@@ -9,19 +10,26 @@ import { TasksService } from '../planner.service';
   selector: 'ga-task',
   templateUrl: 'task.component.html',
   styleUrls: ['task.component.css'],
-  inputs: ['task'],
+  inputs: ['task', 'tasks'],
   outputs: ['dailyGoalsChanged']
 })
 export class TaskComponent{
   task: Task;
+  tasks: Task[];
   date: Date;
 
-  constructor(@Inject(TasksService) private _TasksService: TasksService, private router: Router, private route: ActivatedRoute) {
+  constructor(@Inject(TasksService) private _TasksService: TasksService, private router: Router, private route: ActivatedRoute, private plannerComponent: PlannerComponent) {
   this.date = new Date;
   }
 
    onSelect(task: Task) {
     this.router.navigate(['/task', task._id]);
+  }
+
+  getTasks(): void {
+    this._TasksService.getUserTasks().subscribe(tasks => {
+    this.tasks = tasks;
+    })
   }
 
   done(): any {
@@ -30,6 +38,7 @@ export class TaskComponent{
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.plannerComponent.getTasks();
       } else {
         console.log("task update failed");
       }
@@ -43,6 +52,7 @@ export class TaskComponent{
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.plannerComponent.getTasks();
       } else {
         console.log("task update failed");
       }
@@ -56,6 +66,7 @@ export class TaskComponent{
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.plannerComponent.getTasks();
       } else {
         console.log("task update failed");
       }
@@ -69,6 +80,7 @@ export class TaskComponent{
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.plannerComponent.getTasks();
       } else {
         console.log("task update failed");
       }
@@ -81,6 +93,7 @@ export class TaskComponent{
     .subscribe(  data => {
            // refresh the list
            console.log("works!");
+          this.plannerComponent.getTasks();
          },
          error => {
            console.log("This is the " + error);

@@ -9,6 +9,23 @@ h3 {
     font-size: 2em;
 }
 
+p {
+    color: orange;
+    font-size: 1em;
+}
+
+a {
+    border: 1px solid #309550 !important;
+    background: none;
+    border-radius: 5px;
+    width: 20vw;
+    color: white !important;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
 button {
     margin: 0 auto;
     display: block;
@@ -16,5 +33,5 @@ button {
     border: 1px solid red;
     border-radius: 5px;
     margin-bottom: 3%;
-    padding: 2%;
+    padding: 1%;
 }

@@ -6,9 +6,10 @@ import { Task, TaskComponent } from '../task/task.component';
   moduleId: module.id,
   selector: 'ga-pinnedtasks',
   templateUrl: 'pinnedtasks.component.html',
-  styleUrls: ['pinnedtasks.component.css']
+  styleUrls: ['pinnedtasks.component.css'],
+  inputs: ["tasks"]
 })
-export class PinnedtasksComponent implements OnInit {
+export class PinnedtasksComponent {
   //initializing tasks as Task array from Service
   tasks: Task[]; 
 
@@ -19,16 +20,16 @@ export class PinnedtasksComponent implements OnInit {
   constructor(@Inject(TasksService) private _TasksService: TasksService) { }
 
   //drawing the data from seed-tasks via Service
-  getTasks(): void {
-    this._TasksService.getUserTasks().subscribe(tasks => {
-    this.tasks = tasks;
-    })
-  }
+  // getTasks(): void {
+  //   this._TasksService.getUserTasks().subscribe(tasks => {
+  //   this.tasks = tasks;
+  //   })
+  // }
 
-  //getting tasks before load
-  ngOnInit(): void {
-    this.getTasks();
-  }
+  // //getting tasks before load
+  // ngOnInit(): void {
+  //   this.getTasks();
+  // }
   //function to switch state to make collapsible work
    switchPinned(): any {
     this.switchpinned = !this.switchpinned;

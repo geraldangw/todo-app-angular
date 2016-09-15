@@ -6,9 +6,10 @@ import { Task, TaskComponent } from '../task/task.component';
   moduleId: module.id,
   selector: 'ga-pendingtasks',
   templateUrl: 'pendingtasks.component.html',
-  styleUrls: ['pendingtasks.component.css']
+  styleUrls: ['pendingtasks.component.css'],
+  inputs: ["tasks"]
 })
-export class PendingtasksComponent implements OnInit {
+export class PendingtasksComponent {
   //initializing tasks as Task array from Service
   tasks: Task[]; 
   usertasks: Task[];
@@ -20,16 +21,16 @@ export class PendingtasksComponent implements OnInit {
   constructor(@Inject(TasksService) private _TasksService: TasksService) { }
 
   //drawing the data from seed-tasks via Service
- getTasks(): void {
-    this._TasksService.getUserTasks().subscribe(tasks => {
-    this.tasks = tasks;
-    })
-  }
+//  getTasks(): void {
+//     this._TasksService.getUserTasks().subscribe(tasks => {
+//     this.tasks = tasks;
+//     })
+//   }
 
-  //getting tasks before load
-  ngOnInit(): void {
-    this.getTasks();
-  }
+//   //getting tasks before load
+//   ngOnInit(): void {
+//     this.getTasks();
+//   }
 
   //function to switch state to make collapsible work
   switchPending(): any {

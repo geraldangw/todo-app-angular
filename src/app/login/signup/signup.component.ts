@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   loading = false;
   error = '';
   signed: boolean = false;
+  newsignup: boolean = false;
 
   constructor( private router: Router, private signupService: SignupService ) { }
 
@@ -36,6 +37,10 @@ export class SignupComponent implements OnInit {
         console.log(this.error);
       }
     })
+  }
+
+    newsign(): any {
+    this.newsignup = !this.newsignup;
   }
 
 }

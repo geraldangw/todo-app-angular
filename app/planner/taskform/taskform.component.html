@@ -1,12 +1,4 @@
-  
-    <ga-weather> </ga-weather>
-
-    <!--rendering the event from dailygoals component and also adding task status-->
-    <div class="jumbotron">  <h3 id="goal"> {{dailyGoalsValue}} </h3></div>
-    <p> YOU HAVE {{tasks | todaystaskscount}} {{ (tasks | todaystaskscount) < 2 ? "TASK":"TASKS"}} LEFT TODAY...</p>
-    <ga-dailygoal (dailyGoalsChanged)="onChange($event)"> </ga-dailygoal>
-
-        
+    
     <form name="form" (ngSubmit)="f.form.valid && addTask()" #f="ngForm" novalidate>
      
 
@@ -43,17 +35,3 @@
 <div *ngIf="error" class="alert alert-danger">{{error}}</div>
  </div>
 </form>
-
-    <ga-todaystasks [tasks]="tasks"> </ga-todaystasks>
-    <ga-pinnedtasks [tasks]="tasks"> </ga-pinnedtasks>
-    <ga-pendingtasks [tasks]="tasks"> </ga-pendingtasks>
-    <ga-donetasks [tasks]="tasks"> </ga-donetasks>
-    <ga-deletedtasks [tasks]="tasks"> </ga-deletedtasks>
-    
-    
-
-    
-  
-
-
-

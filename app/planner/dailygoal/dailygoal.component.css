@@ -3,6 +3,7 @@
     margin: 0 auto;
     background-color: rgba(20,20,20,0.05);
     border: none;
+    margin-bottom: 2%;
 }
 
 label {
@@ -21,9 +22,9 @@ input {
     margin: 0 auto;
     text-align: center;
     border-radius: 5px;
-    background: none;
+    background-color: white;
     border: 1px solid white;
-    color: white;
+    color: black;
 }
 
 button {
@@ -42,11 +43,6 @@ button:hover {
 
 a {
     color: #A9FBC3 !important;
-}
-
-a:hover {
-    color: #ED4D6E !important;
-    text-decoration: none;
 }
 
 #showdeleted {

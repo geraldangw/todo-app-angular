@@ -1,0 +1,10 @@
+  
+  <div class="jumbotron">
+      <h3> DONE </h3>
+     <div *ngIf="!switchdone"> <p> {{ tasks | donetaskscount }} Tasks </p> </div>
+      <a *ngIf="!switchdone" (click)="switchDone()"> SHOW </a> <a *ngIf="switchdone" (click)="switchDone()"> COLLAPSE </a>
+      <button *ngIf="switchdone" (click)="deleteAll()"> DELETE ALL!</button>
+      <div *ngIf="switchdone"> 
+        <ga-task *ngFor="let task of tasks | donetasks" [task]="task"></ga-task>
+      </div>
+      </div>

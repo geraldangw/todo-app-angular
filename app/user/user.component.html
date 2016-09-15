@@ -1,0 +1,13 @@
+<div class="col-md-6 col-md-offset-3">
+
+<h1> User List </h1>
+
+<div>
+Current Users
+<ul>
+<li (click)=OnSelect(user) *ngFor="let user of users"> {{ user.first_name }} <span (click)="delete(user._id)"> DELETE </span> </li>
+</ul>
+</div>
+
+<p> <a [routerLink] = "['/login']"> LOGOUT </a> </p> 
+</div>

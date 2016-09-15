@@ -1,0 +1,10 @@
+    
+    
+    <div class="jumbotron"> 
+      <h3> PINNED</h3>
+        <div *ngIf="!switchpinned"> <p > {{ tasks | pinnedtaskscount}} Tasks </p> </div>
+        <a *ngIf="!switchpinned"  (click)="switchPinned()"> SHOW </a> <a *ngIf="switchpinned" (click)="switchPinned()"> COLLAPSE </a>
+        <div *ngIf="switchpinned">
+        <ga-task *ngFor="let task of tasks | pinnedtasks" [task]="task"></ga-task>
+        </div> 
+    </div>

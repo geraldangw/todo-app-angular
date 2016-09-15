@@ -35,6 +35,17 @@ var barrels = [
     'app/planner/dailygoal',
     'app/about',
     'app/planner/deleteditems',
+    'app/planner/todaystasks',
+    'app/planner/deletedtasks',
+    'app/planner/pinnedtasks',
+    'app/planner/pendingtasks',
+    'app/planner/donetasks',
+    'app/planner/taskform',
+    'app/planner/taskdetail',
+    'app/user',
+    'app/login',
+    'app/login/signup',
+    'app/user/userdetail',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {

@@ -1,0 +1,24 @@
+<div *ngIf="task" >
+
+<h2> {{ task.task | uppercase }} </h2>
+
+<h5 class="deadlinestatus" *ngIf="task.status"> You have completed this task.</h5>
+<h5 class="deadlinestatus" *ngIf="!task.status && ((task.deadline | date) > (date | date))"> You have {{ ((task.deadline | date: 'd' ) - (date | date: 'd')) }} {{((task.deadline | date: "d" ) - (date | date: "d" )) > 1? "days":"day" }} left..</h5>
+<h5 class="deadlinestatus" *ngIf="((task.deadline | date) < (date | date )) && task.status === false"> You are overdue by {{-((task.deadline | date: "d") - (date | date: "d"))}} {{((date | date: "d" ) - (task.deadline | date: "d" )) < 2? "day!":"days!" }} </h5>
+<h5> DONE BY: {{ task.deadline | date: "E, d MMMM y" | uppercase}}  </h5> 
+
+<div id="pinneditem" *ngIf="task.priority" href (click)="unprioritize()"> PINNED </div>
+<div id="unpinneditem" *ngIf="!task.priority" href (click)="prioritize()"> PIN </div>
+<div id="done" *ngIf="task.status" href (click)="undone()"> DONE</div>
+<div id="pending" *ngIf="!task.status" href (click)="done()"> PENDING</div>
+<div id="restore" *ngIf="task.deleted" href (click)="restore()"> RESTORE</div>
+<div id="delete" *ngIf="!task.deleted" href (click)="delete()"> DELETE</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading"> DESCRIPTION </div>
+    <div class="panel-body"> {{task.description }} </div>
+ </div>
+      
+<button (click)="goBack()"> BACK </button>
+
+

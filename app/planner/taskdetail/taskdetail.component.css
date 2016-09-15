@@ -1,0 +1,107 @@
+.panel {
+    width: 80vw;
+    background-color: rgba(20,20,20,0.05);
+    border: none;
+    margin: 0 auto;
+    margin-top: 6%;
+}
+
+.panel-heading {
+    background-color: rgba(20,20,20,0.2);
+    color:white;
+    padding: 5%;
+    font-size: 1.1em;
+}
+.panel-body {
+    padding: 10%;
+    font-size: 1.1em;
+}
+h2 {
+    margin-top: 5%;
+    margin-bottom: 6%;
+    font-size: 2.5em;
+}
+ h5 {
+     margin-bottom: 5%;
+     font-size: 1.3em;
+ }
+
+p {
+    font-size: 1.1em;
+    padding: 4%;
+}
+
+button {
+    margin-top: 8%;
+    margin-bottom: 5%;
+    background: none;
+    border-radius: 3px;
+    border: 1px solid white;
+    padding: 2% 5%;
+}
+
+#done {
+    background-color: #648767;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 2%;
+    display: inline-block;
+    font-size: 1em;
+}
+
+#pending {
+    background-color: #ED4D6E;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 2%;
+    display: inline-block;
+    font-size: 1em;
+}
+
+#pinneditem {
+    background-color: #2274A5;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}
+#unpinneditem {
+    background-color: grey;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.deadlinestatus {
+    margin-top: 1%;
+}
+
+#restore {
+    background-color: orange;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}
+#delete {
+    background-color: red;
+    padding: 3%;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 1em;
+}
+
+#done:hover, #pending:hover, #pinneditem:hover, #unpinneditem:hover, #restore:hover, #delete:hover {
+    border: 1px solid white;
+}

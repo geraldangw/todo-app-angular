@@ -22,9 +22,15 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
   this.date = new Date;
 }
 
-  ngOnInit() {
-      let id = this.route.snapshot.params['id'];
+  getTask() {
+let id = this.route.snapshot.params['id'];
       this._TasksService.getTask(id).subscribe(task => this.task = task);
+  };
+
+  ngOnInit() {
+      this.getTask();
+      // let id = this.route.snapshot.params['id'];
+      // this._TasksService.getTask(id).subscribe(task => this.task = task);
      };
 
     goBack() { this.router.navigate(['/']); }
@@ -35,6 +41,7 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.getTask();
       } else {
         console.log("task update failed");
       }
@@ -48,6 +55,7 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.getTask();
       } else {
         console.log("task update failed");
       }
@@ -61,6 +69,7 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.getTask();
       } else {
         console.log("task update failed");
       }
@@ -74,6 +83,7 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.getTask();
       } else {
         console.log("task update failed");
       }
@@ -87,6 +97,7 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.getTask();
       } else {
         console.log("task update failed");
       }
@@ -100,6 +111,7 @@ constructor(private router: Router, private route: ActivatedRoute, private _Task
       if(task) {
         console.log(task);
         console.log("task updated");
+        this.getTask();
       } else {
         console.log("task update failed");
       }

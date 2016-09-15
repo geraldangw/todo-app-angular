@@ -16,7 +16,7 @@ export class UserService {
 
 
     public GetAll = (): Observable<User[]> => {
-        return this.http.get('http://localhost:8000/api/users')
+        return this.http.get('https://afternoon-river-80988.herokuapp.com/api/users')
                 .map((response: Response) => <User[]>response.json())
                 .catch(this.handleError);
     }
@@ -24,7 +24,7 @@ export class UserService {
     public GetSingle = (id: string): Observable<User> => {
         let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
         let options = new RequestOptions({ headers: headers });
-        return this.http.get('http://localhost:8000/api/users/' + id, options)
+        return this.http.get('https://afternoon-river-80988.herokuapp.com/api/users/' + id, options)
                 .map((response: Response) => <User>response.json())
                 .catch(this.handleError);
     }
@@ -32,7 +32,7 @@ export class UserService {
     public Update = (id: string, itemToUpdate: User): Observable<User> => {
         let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
         let options = new RequestOptions({ headers: headers });
-        return this.http.put('http://localhost:8000/api/users/' + id, itemToUpdate, options)
+        return this.http.put('https://afternoon-river-80988.herokuapp.com/api/users/' + id, itemToUpdate, options)
                 .map((response: Response) => <User>response.json())
                 .catch(this.handleError);
     } 
@@ -40,7 +40,7 @@ export class UserService {
     public Delete = (id: string): Observable<Response> => {
         let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
         let options = new RequestOptions({ headers: headers });
-        return this.http.delete('http://localhost:8000/api/users/' + id, options)
+        return this.http.delete('https://afternoon-river-80988.herokuapp.com/api/users/' + id, options)
                 .catch(this.handleError);
     }
 

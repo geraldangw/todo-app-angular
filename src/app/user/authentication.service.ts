@@ -20,7 +20,7 @@ export class AuthenticationService {
     login(email, password): Observable<boolean> {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:8000/login', JSON.stringify({
+        return this.http.post('https://afternoon-river-80988.herokuapp.com/login', JSON.stringify({
             email:email, password:password }), { headers })
                 .map((response: Response) => {
                     //login successful if there is a jwt token

@@ -27,7 +27,7 @@ constructor(private http: Http, private authenticationService: AuthenticationSer
 public getUserTasks = (): Observable<Task[]> => {
   let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
   let options = new RequestOptions({ headers: headers });
-return this.http.get((('http://localhost:8000/api/users/').concat(this.currentUser)), options)
+return this.http.get((('https://afternoon-river-80988.herokuapp.com/api/users/').concat(this.currentUser)), options)
                 .map((response: Response) => <User>response.json().task)
                 .catch(this.handleError);
     }
@@ -35,7 +35,7 @@ return this.http.get((('http://localhost:8000/api/users/').concat(this.currentUs
 public getTask = (id: string): Observable<Task> => {
         let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
         let options = new RequestOptions({ headers: headers });
-        return this.http.get('http://localhost:8000/api/tasks/' + id, options)
+        return this.http.get('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, options)
                 .map((response: Response) => <Task>response.json())
                 .catch(this.handleError);
     }
@@ -45,7 +45,7 @@ public addTask = (task, description, deadline, priority, user): Observable<boole
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         //get tasks from api
-        return this.http.post('http://localhost:8000/api/tasks', JSON.stringify({
+        return this.http.post('https://afternoon-river-80988.herokuapp.com/api/tasks', JSON.stringify({
           task:task, description:description, deadline:deadline, priority:priority, user:user }), { headers })
               .map((response: Response) => {
                 return true;
@@ -58,7 +58,7 @@ public Done = (id: string): Observable<Task> => {
   let updateItem = {
     "status": true
           }
-  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+  return this.http.put('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, updateItem, options )
         .map((response: Response) => <Task>response.json())
         .catch(this.handleError);
 }
@@ -69,7 +69,7 @@ public unDone = (id: string): Observable<Task> => {
   let updateItem = {
     "status": false
           }
-  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+  return this.http.put('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, updateItem, options )
         .map((response: Response) => <Task>response.json())
         .catch(this.handleError);
 }
@@ -80,7 +80,7 @@ public Pinned = (id: string): Observable<Task> => {
   let updateItem = {
     "priority": true
           }
-  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+  return this.http.put('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, updateItem, options )
         .map((response: Response) => <Task>response.json())
         .catch(this.handleError);
 }
@@ -91,7 +91,7 @@ public unPin = (id: string): Observable<Task> => {
   let updateItem = {
     "priority": false
           }
-  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+  return this.http.put('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, updateItem, options )
         .map((response: Response) => <Task>response.json())
         .catch(this.handleError);
 }
@@ -102,7 +102,7 @@ public TempDelete = (id: string): Observable<Task> => {
   let updateItem = {
     "deleted": true
           }
-  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+  return this.http.put('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, updateItem, options )
         .map((response: Response) => <Task>response.json())
         .catch(this.handleError);
 }
@@ -113,7 +113,7 @@ public Restore = (id: string): Observable<Task> => {
   let updateItem = {
     "deleted": false
           }
-  return this.http.put('http://localhost:8000/api/tasks/' + id, updateItem, options )
+  return this.http.put('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, updateItem, options )
         .map((response: Response) => <Task>response.json())
         .catch(this.handleError);
 }
@@ -122,7 +122,7 @@ public Restore = (id: string): Observable<Task> => {
 public Delete = (id: string): Observable<Response> => {
   let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token});
   let options = new RequestOptions({ headers: headers });
-  return this.http.delete('http://localhost:8000/api/tasks/' + id, options)
+  return this.http.delete('https://afternoon-river-80988.herokuapp.com/api/tasks/' + id, options)
         .catch(this.handleError);
 }
 

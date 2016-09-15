@@ -17,7 +17,7 @@ export class SignupService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         //get users from api
-        return this.http.post('http://localhost:8000/api/users', JSON.stringify({
+        return this.http.post('https://afternoon-river-80988.herokuapp.com/api/users', JSON.stringify({
             first_name:first_name, last_name:last_name, email:email, password:password
         }), { headers })
                 .map((response: Response) => {

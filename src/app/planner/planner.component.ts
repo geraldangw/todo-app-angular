@@ -57,9 +57,9 @@ export class PlannerComponent implements OnInit{
     this._TasksService.addTask(this.model.task, this.model.description, this.model.deadline, this.model.priority, this.currentUser)
     .subscribe( result => {
       //add task successful
-      if(result === true) {
-        this.loading = false;
+      if(result === true) { 
         this.getTasks();
+        this.loading = false;
       } else {
         this.error = 'add task failed!';
         this.loading = false;
